@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 39700,
-	"name": "Treasure Divers",
+	"name": "Treasure Divers- master",
 	"runtime": "c3",
 	"useWorker": "dom",
 	"bundleAddons": false,
