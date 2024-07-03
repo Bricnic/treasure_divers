@@ -1,0 +1,12 @@
+{
+	"name": "CollectableObjects",
+	"plugin-id": "Sprite",
+	"sid": 754001414821412,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Gem",
+		"TreasureChest"
+	]
+}

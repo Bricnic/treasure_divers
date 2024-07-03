@@ -1,3 +1,4 @@
+*.uistate.json
 bricnic/*.uistate.json
 master/*.uistate.json
 mlangille/*.uistate.json

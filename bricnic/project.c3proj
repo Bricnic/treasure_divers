@@ -86,7 +86,9 @@
 			"Text",
 			"Player_1_Boat",
 			"TiledBackground2",
-			"TiledBackground3"
+			"TiledBackground3",
+			"TreasureChest",
+			"Gem"
 		],
 		"subfolders": []
 	},
@@ -98,7 +100,8 @@
 			"Backgrounds",
 			"Water",
 			"Players",
-			"Family1"
+			"Family1",
+			"CollectableObjects"
 		],
 		"subfolders": []
 	},

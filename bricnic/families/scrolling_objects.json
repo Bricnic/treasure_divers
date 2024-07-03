@@ -9,6 +9,8 @@
 		"Player_1",
 		"Player_2",
 		"Background",
-		"Player_1_Boat"
+		"Player_1_Boat",
+		"Gem",
+		"TreasureChest"
 	]
 }

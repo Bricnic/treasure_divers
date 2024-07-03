@@ -22,6 +22,56 @@
 			"sid": 445897674723113
 		},
 		{
+			"eventType": "variable",
+			"name": "GemWeight",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 192370403270535
+		},
+		{
+			"eventType": "variable",
+			"name": "TreasureChestWeight",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 967184587580031
+		},
+		{
+			"eventType": "variable",
+			"name": "MaxWeight",
+			"type": "number",
+			"initialValue": "12",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 343953147555351
+		},
+		{
+			"eventType": "variable",
+			"name": "GemScoreCount",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 884859610484335
+		},
+		{
+			"eventType": "variable",
+			"name": "TreasureChestScoreCount",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 805053406811050
+		},
+		{
 			"eventType": "comment",
 			"text": "THIS PROJECT WOULD NOT BE POSSIBLE WITHOUT THE SUPPORT AND HELP FROM @ooysyrag                                                                                                                                               https://www.construct.net/en/forum/construct-3/general-discussion-7/pasting-drawing-canvas-split-143168"
 		},
@@ -495,6 +545,42 @@
 								"instance-variable": "InBoat",
 								"value": "1"
 							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 731172771789932,
+							"parameters": {
+								"instance-variable": "Score",
+								"value": "Player_1.GemCount * GemScoreCount + Player_1.TreasureChestCount * TreasureChestScoreCount"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 985497761378469,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 195943401059367,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 537894977745743,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 442555730778083
@@ -946,6 +1032,244 @@
 				}
 			],
 			"sid": 522787896268692
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collectibles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 952150423626335,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 186019906032715,
+							"parameters": {
+								"object": "Gem"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 218650745100549,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - GemWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Gem",
+							"sid": 864177295249410
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 706674688090451,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "GemWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 649135982207330,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 948556678561191
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 190127048552367,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 580233122276635,
+							"parameters": {
+								"object": "Gem"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 275438674036708,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - GemWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Gem",
+							"sid": 279678747018056
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 957474287628159,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "GemWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 286425216094900,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 745818551782866
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 694384670685494,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 169293999350063,
+							"parameters": {
+								"object": "TreasureChest"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 519872228404417,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - TreasureChestWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "TreasureChest",
+							"sid": 448135018634512
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 113484880385377,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "TreasureChestWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 485453729690990,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 391827774883645
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 439003677481608,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 383796791004912,
+							"parameters": {
+								"object": "TreasureChest"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 964147213696934,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - TreasureChestWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "TreasureChest",
+							"sid": 583352155225170
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 188536910332726,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "TreasureChestWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 483687256877126,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 807588998513954
+				}
+			],
+			"sid": 414882662702868
 		}
 	],
 	"sid": 390088743331416
