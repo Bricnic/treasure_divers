@@ -5,6 +5,7 @@ Instructions for making edits and/or compiling:
 2. Rename the zip file with the .c3p extension
 3. The file can now be opened using Construct3: https://editor.construct.net/
 4. To commit any changes made in Construct3:
+   
   a) Save the file locally
   b) Make a copy, and rename the copied file with the .zip extension
   c) Extract all the files into a local directory
