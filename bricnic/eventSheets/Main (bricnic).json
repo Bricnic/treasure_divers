@@ -146,6 +146,20 @@
 								"x": "Player_2.X + ViewportWidth(\"Canvas\") / 4",
 								"y": "Player_2.Y"
 							}
+						},
+						{
+							"id": "fill-linear-gradient",
+							"objectClass": "DrawingCanvas",
+							"sid": 797111046916402,
+							"parameters": {
+								"left": "800",
+								"top": "768",
+								"right": "3200",
+								"bottom": "8000",
+								"color1": "rgba(0, 0, 0, 0)",
+								"color2": "rgba(0, 0, 0, 210)",
+								"direction": "vertical"
+							}
 						}
 					],
 					"sid": 971633496902458
@@ -604,48 +618,30 @@
 							}
 						},
 						{
-							"id": "set-gravity",
-							"objectClass": "Player_1",
-							"sid": 193175778842583,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "1200"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Player_1",
-							"sid": 304450428519673,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "400"
-							}
-						},
-						{
-							"id": "set-jump-strength",
-							"objectClass": "Player_1",
-							"sid": 247210579376303,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-strength": "250"
-							}
-						},
-						{
-							"id": "set-jump-sustain",
-							"objectClass": "Player_1",
-							"sid": 127255337002377,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-sustain": "400"
-							}
-						},
-						{
 							"id": "reset-double-jump",
 							"objectClass": "Player_1",
 							"sid": 370616612251600,
 							"behaviorType": "Platform",
 							"parameters": {
 								"double-jump-allowed": true
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_1",
+							"sid": 593986270353100,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "100"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 871818621445520,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "150"
 							}
 						}
 					],
@@ -674,48 +670,30 @@
 							}
 						},
 						{
-							"id": "set-gravity",
-							"objectClass": "Player_2",
-							"sid": 168310443174814,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "1200"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Player_2",
-							"sid": 650889230053891,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "400"
-							}
-						},
-						{
-							"id": "set-jump-strength",
-							"objectClass": "Player_2",
-							"sid": 440411594485235,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-strength": "250"
-							}
-						},
-						{
-							"id": "set-jump-sustain",
-							"objectClass": "Player_2",
-							"sid": 592059787197808,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-sustain": "400"
-							}
-						},
-						{
 							"id": "reset-double-jump",
 							"objectClass": "Player_2",
 							"sid": 196853874065827,
 							"behaviorType": "Platform",
 							"parameters": {
 								"double-jump-allowed": true
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_2",
+							"sid": 305849878890451,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "100"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 165292435254380,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "150"
 							}
 						}
 					],
@@ -743,6 +721,33 @@
 							"parameters": {
 								"state": "disabled"
 							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_1",
+							"sid": 245018897003300,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "600"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 518961075345081,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "250"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_1",
+							"sid": 219638940490310,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "min(Player_1.TargetMaxSpeed, Player_1.Platform.MaxSpeed + 100)"
+							}
 						}
 					],
 					"sid": 826128538342830
@@ -769,9 +774,175 @@
 							"parameters": {
 								"state": "disabled"
 							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_2",
+							"sid": 958395902043668,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "600"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 395224970903461,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "250"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_2",
+							"sid": 615923749342010,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "min(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed + 100)"
+							}
 						}
 					],
 					"sid": 777830806189693
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 618733603274803,
+							"parameters": {
+								"key": 16
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 329759668279934,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "300"
+							}
+						}
+					],
+					"sid": 620024595733494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 426882969839710,
+							"parameters": {
+								"key": 16
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 747180820091461,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "150"
+							}
+						}
+					],
+					"sid": 257327695050417
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 508695115817693,
+							"parameters": {
+								"first-value": "Player_1.Platform.MaxSpeed",
+								"comparison": 2,
+								"second-value": "Player_1.TargetMaxSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_1",
+							"sid": 527122551784448,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "min(Player_1.TargetMaxSpeed, Player_1.Platform.MaxSpeed + 25)"
+							}
+						}
+					],
+					"sid": 680798708400151
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 818284075058524,
+							"parameters": {
+								"first-value": "Player_1.Platform.MaxSpeed",
+								"comparison": 4,
+								"second-value": "Player_1.TargetMaxSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_1",
+							"sid": 792267499343867,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "max(Player_1.TargetMaxSpeed, Player_1.Platform.MaxSpeed - 10)"
+							}
+						}
+					],
+					"sid": 753882931798737
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 777819961070129,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_1",
+							"sid": 629668694782349,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "2000"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_1",
+							"sid": 598654051660871,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "3000"
+							}
+						}
+					],
+					"sid": 285118209562782
 				}
 			],
 			"sid": 522787896268692

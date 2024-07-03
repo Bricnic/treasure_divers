@@ -84,7 +84,9 @@
 			"TiledBackground4",
 			"WaterSurface",
 			"Text",
-			"Player_1_Boat"
+			"Player_1_Boat",
+			"TiledBackground2",
+			"TiledBackground3"
 		],
 		"subfolders": []
 	},
@@ -265,7 +267,7 @@
 		"exportFileStructure": "flat",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 768,
-	"viewportHeight": 480,
+	"viewportWidth": 1600,
+	"viewportHeight": 1200,
 	"firstLayout": null
 }

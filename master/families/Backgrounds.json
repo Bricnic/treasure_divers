@@ -10,6 +10,8 @@
 		"TiledBackground",
 		"DeepWater",
 		"TiledBackground4",
-		"WaterSurface"
+		"WaterSurface",
+		"TiledBackground3",
+		"TiledBackground2"
 	]
 }

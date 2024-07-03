@@ -3,7 +3,22 @@
 	"plugin-id": "Sprite",
 	"sid": 830756711575685,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "InBoat",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 115680041490447
+		},
+		{
+			"name": "TargetMaxSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 717298693199480
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Platform",
