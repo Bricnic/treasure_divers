@@ -1,5 +1,5 @@
 {
-	"name": "Diving World",
+	"name": "Diving World (bricnic)",
 	"layers": [
 		{
 			"name": "Game",
@@ -91,7 +91,9 @@
 						"live-preview": false
 					},
 					"uid": 5,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"InBoat": 0
+					},
 					"behaviors": {
 						"Platform": {
 							"properties": {
@@ -246,7 +248,7 @@
 					},
 					"world": {
 						"x": 1184,
-						"y": 896,
+						"y": 864,
 						"width": 544,
 						"height": 128,
 						"originX": 0,
@@ -476,6 +478,64 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "Player_1_Boat",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 10,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Platform": {
+							"properties": {
+								"max-speed": 150,
+								"acceleration": 300,
+								"deceleration": 1500,
+								"jump-strength": 0,
+								"gravity": 0,
+								"max-fall-speed": 0,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1184,
+						"y": 736,
+						"width": 160,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 777366011369243,
@@ -580,5 +640,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Main"
+	"eventSheet": "Main (bricnic)"
 }

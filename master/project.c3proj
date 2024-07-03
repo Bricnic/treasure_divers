@@ -57,6 +57,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -76,7 +83,8 @@
 			"DeepWater",
 			"TiledBackground4",
 			"WaterSurface",
-			"Text"
+			"Text",
+			"Player_1_Boat"
 		],
 		"subfolders": []
 	},
@@ -94,13 +102,13 @@
 	},
 	"layouts": {
 		"items": [
-			"Diving World"
+			"Diving World (bricnic)"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Main"
+			"Main (bricnic)"
 		],
 		"subfolders": []
 	},

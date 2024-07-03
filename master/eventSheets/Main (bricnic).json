@@ -1,5 +1,5 @@
 {
-	"name": "Main",
+	"name": "Main (bricnic)",
 	"events": [
 		{
 			"eventType": "variable",
@@ -348,6 +348,235 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "BoatSpecific",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 282147429866586,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player_1",
+							"sid": 212169057151277,
+							"parameters": {
+								"x": "Player_1_Boat.X",
+								"y": "Player_1_Boat.Y"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_1",
+							"sid": 550899193856096,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 248046348982926
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 393871619953656,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 755102182373634,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 862383615471584,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_1",
+							"sid": 143195939448891,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player_1",
+							"sid": 264091358400226,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "350"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player_1",
+							"sid": 209790816613369,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "0"
+							}
+						}
+					],
+					"sid": 168606244647775
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_1",
+							"sid": 911438856958113,
+							"parameters": {
+								"object": "Player_1_Boat"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 443870559602147,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 463829718165096,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 442555730778083
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 895442568770382,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 608659465158033,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1_Boat",
+							"sid": 507870689987734,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_1_Boat",
+							"sid": 835767541147646,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 221650923876511
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 398368659151229,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 757148422821044,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1_Boat",
+							"sid": 494067209087168,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_1_Boat",
+							"sid": 401599829906481,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 720014715156139
+				}
+			],
+			"sid": 147370845015709
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Player_jumps",
 			"description": "",
 			"isActiveOnStart": true,
@@ -507,42 +736,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-gravity",
-							"objectClass": "Player_1",
-							"sid": 550581296866946,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "1000"
-							}
-						},
-						{
-							"id": "set-jump-strength",
-							"objectClass": "Player_1",
-							"sid": 394087108188694,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-strength": "500"
-							}
-						},
-						{
-							"id": "set-jump-sustain",
-							"objectClass": "Player_1",
-							"sid": 618912718260242,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-sustain": "500"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Player_1",
-							"sid": 872930962642811,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "1000"
-							}
-						},
-						{
 							"id": "set-double-jump",
 							"objectClass": "Player_1",
 							"sid": 332005458744738,
@@ -568,42 +761,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-gravity",
-							"objectClass": "Player_2",
-							"sid": 460857563737398,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "1000"
-							}
-						},
-						{
-							"id": "set-jump-strength",
-							"objectClass": "Player_2",
-							"sid": 239963408463038,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-strength": "500"
-							}
-						},
-						{
-							"id": "set-jump-sustain",
-							"objectClass": "Player_2",
-							"sid": 480509355801154,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-sustain": "500"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Player_2",
-							"sid": 124972839970291,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "1000"
-							}
-						},
 						{
 							"id": "set-double-jump",
 							"objectClass": "Player_2",

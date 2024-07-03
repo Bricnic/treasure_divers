@@ -8,6 +8,7 @@
 	"members": [
 		"Player_1",
 		"Player_2",
-		"Background"
+		"Background",
+		"Player_1_Boat"
 	]
 }
