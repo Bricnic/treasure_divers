@@ -68,7 +68,7 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "All_Objects1",
+							"objectClass": "scrolling_objects",
 							"sid": 287256455688009,
 							"parameters": {
 								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
@@ -77,7 +77,7 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "All_Objects2",
+							"objectClass": "Backgrounds",
 							"sid": 571961453530609,
 							"parameters": {
 								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
@@ -89,7 +89,7 @@
 							"objectClass": "DrawingCanvas",
 							"sid": 446652699107163,
 							"parameters": {
-								"object": "All_Objects1",
+								"object": "scrolling_objects",
 								"effects": "with-effects"
 							}
 						},
@@ -98,13 +98,22 @@
 							"objectClass": "DrawingCanvas",
 							"sid": 668275097500935,
 							"parameters": {
-								"object": "All_Objects2",
+								"object": "Backgrounds",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 998797894985044,
+							"parameters": {
+								"object": "Family1",
 								"effects": "with-effects"
 							}
 						},
 						{
 							"id": "set-position",
-							"objectClass": "All_Objects1",
+							"objectClass": "scrolling_objects",
 							"sid": 284978032510951,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
@@ -113,7 +122,7 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "All_Objects2",
+							"objectClass": "Backgrounds",
 							"sid": 526974032670148,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
@@ -332,14 +341,24 @@
 						}
 					],
 					"sid": 900809648510280
-				},
+				}
+			],
+			"sid": 618158421335236
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player_jumps",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_1",
-							"sid": 699690441819533,
+							"sid": 433103909583893,
 							"parameters": {
 								"object": "Water"
 							}
@@ -349,7 +368,7 @@
 						{
 							"id": "set-double-jump",
 							"objectClass": "Player_1",
-							"sid": 112502069494095,
+							"sid": 581758211172524,
 							"behaviorType": "Platform",
 							"parameters": {
 								"state": "enabled"
@@ -358,28 +377,58 @@
 						{
 							"id": "set-gravity",
 							"objectClass": "Player_1",
-							"sid": 997573672002374,
+							"sid": 193175778842583,
 							"behaviorType": "Platform",
 							"parameters": {
-								"gravity": "0.4"
+								"gravity": "1200"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_1",
+							"sid": 304450428519673,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "400"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "Player_1",
+							"sid": 247210579376303,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-strength": "250"
+							}
+						},
+						{
+							"id": "set-jump-sustain",
+							"objectClass": "Player_1",
+							"sid": 127255337002377,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-sustain": "400"
+							}
+						},
+						{
+							"id": "reset-double-jump",
+							"objectClass": "Player_1",
+							"sid": 370616612251600,
+							"behaviorType": "Platform",
+							"parameters": {
+								"double-jump-allowed": true
 							}
 						}
 					],
-					"sid": 833328126180099
+					"sid": 342664472481317
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-falling",
-							"objectClass": "Player_1",
-							"sid": 120390241748704,
-							"behaviorType": "Platform"
-						},
-						{
 							"id": "is-overlapping-another-object",
-							"objectClass": "Player_1",
-							"sid": 260528085455015,
+							"objectClass": "Player_2",
+							"sid": 385409353108665,
 							"parameters": {
 								"object": "Water"
 							}
@@ -387,16 +436,61 @@
 					],
 					"actions": [
 						{
+							"id": "set-double-jump",
+							"objectClass": "Player_2",
+							"sid": 249114758696982,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_2",
+							"sid": 168310443174814,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1200"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_2",
+							"sid": 650889230053891,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "400"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "Player_2",
+							"sid": 440411594485235,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-strength": "250"
+							}
+						},
+						{
+							"id": "set-jump-sustain",
+							"objectClass": "Player_2",
+							"sid": 592059787197808,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-sustain": "400"
+							}
+						},
+						{
 							"id": "reset-double-jump",
-							"objectClass": "Player_1",
-							"sid": 227722304382790,
+							"objectClass": "Player_2",
+							"sid": 196853874065827,
 							"behaviorType": "Platform",
 							"parameters": {
 								"double-jump-allowed": true
 							}
 						}
 					],
-					"sid": 198113687653747
+					"sid": 926074925113942
 				},
 				{
 					"eventType": "block",
@@ -404,7 +498,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_1",
-							"sid": 809388575194588,
+							"sid": 129691248162505,
 							"parameters": {
 								"object": "Water"
 							},
@@ -415,17 +509,115 @@
 						{
 							"id": "set-gravity",
 							"objectClass": "Player_1",
-							"sid": 113456580693269,
+							"sid": 550581296866946,
 							"behaviorType": "Platform",
 							"parameters": {
-								"gravity": "100"
+								"gravity": "1000"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "Player_1",
+							"sid": 394087108188694,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-strength": "500"
+							}
+						},
+						{
+							"id": "set-jump-sustain",
+							"objectClass": "Player_1",
+							"sid": 618912718260242,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-sustain": "500"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_1",
+							"sid": 872930962642811,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "1000"
+							}
+						},
+						{
+							"id": "set-double-jump",
+							"objectClass": "Player_1",
+							"sid": 332005458744738,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
 							}
 						}
 					],
-					"sid": 654750307900772
+					"sid": 826128538342830
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 606897599844209,
+							"parameters": {
+								"object": "Water"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_2",
+							"sid": 460857563737398,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1000"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "Player_2",
+							"sid": 239963408463038,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-strength": "500"
+							}
+						},
+						{
+							"id": "set-jump-sustain",
+							"objectClass": "Player_2",
+							"sid": 480509355801154,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-sustain": "500"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_2",
+							"sid": 124972839970291,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "1000"
+							}
+						},
+						{
+							"id": "set-double-jump",
+							"objectClass": "Player_2",
+							"sid": 689581663108766,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 777830806189693
 				}
 			],
-			"sid": 618158421335236
+			"sid": 522787896268692
 		}
 	],
 	"sid": 390088743331416

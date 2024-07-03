@@ -153,8 +153,8 @@
 						}
 					},
 					"world": {
-						"x": 1664,
-						"y": 416,
+						"x": 1472,
+						"y": 832,
 						"width": 63,
 						"height": 63,
 						"originX": 0.5,
@@ -292,7 +292,7 @@
 					},
 					"world": {
 						"x": 256,
-						"y": 704,
+						"y": 864,
 						"width": 256,
 						"height": 128,
 						"originX": 0,
@@ -400,52 +400,6 @@
 					}
 				},
 				{
-					"type": "Ground",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 16,
-					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 1472,
-						"y": 512,
-						"width": 256,
-						"height": 128,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "DeepWater",
 					"properties": {
 						"initially-visible": true,
@@ -517,7 +471,7 @@
 							1,
 							1,
 							1,
-							0.7
+							0.6859999999999999
 						],
 						"angle": 0,
 						"zElevation": 0
