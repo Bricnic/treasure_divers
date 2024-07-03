@@ -1,0 +1,12 @@
+{
+	"name": "Water",
+	"plugin-id": "TiledBg",
+	"sid": 323229045826683,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"DeepWater",
+		"WaterSurface"
+	]
+}

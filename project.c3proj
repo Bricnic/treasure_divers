@@ -1,11 +1,25 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 39700,
-	"name": "New project",
+	"name": "Treasure Divers",
 	"runtime": "c3",
-	"useWorker": "auto",
+	"useWorker": "dom",
 	"bundleAddons": false,
 	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "DrawingCanvas",
+			"name": "Drawing canvas",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
 		{
 			"type": "plugin",
 			"id": "Sprite",
@@ -22,37 +36,55 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Sin",
-			"name": "Sine",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
 	],
-	"uniqueId": "aoad4sovqc2",
+	"uniqueId": "bvo3nrjvngw",
 	"objectTypes": {
 		"items": [
-			"Water",
+			"DrawingCanvas",
+			"Background",
+			"Ground",
+			"Player_1",
+			"Player_2",
+			"Keyboard",
 			"TiledBackground",
-			"TiledBackground2",
-			"TiledBackground3"
+			"DeepWater",
+			"TiledBackground4",
+			"WaterSurface"
 		],
 		"subfolders": []
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"All_Objects1",
+			"All_Objects2",
+			"Water",
+			"Players"
+		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Diving World"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Main"
 		],
 		"subfolders": []
 	},
@@ -80,9 +112,17 @@
 		"icon": {
 			"items": [
 				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 593321478944020,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
 					"name": "icon-16.png",
 					"type": "image/png",
-					"sid": 704288654012019,
+					"sid": 489572352305991,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -90,7 +130,7 @@
 				{
 					"name": "icon-32.png",
 					"type": "image/png",
-					"sid": 648892275185843,
+					"sid": 117636622090146,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -98,7 +138,7 @@
 				{
 					"name": "icon-64.png",
 					"type": "image/png",
-					"sid": 870011190516299,
+					"sid": 538479537158750,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -106,7 +146,7 @@
 				{
 					"name": "icon-128.png",
 					"type": "image/png",
-					"sid": 447536324877437,
+					"sid": 353257269530887,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -114,7 +154,7 @@
 				{
 					"name": "icon-256.png",
 					"type": "image/png",
-					"sid": 618461021929643,
+					"sid": 462203784047575,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -122,17 +162,9 @@
 				{
 					"name": "icon-512.png",
 					"type": "image/png",
-					"sid": 702583658636604,
+					"sid": 378216735593946,
 					"icon-info": {
 						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "loading-logo.png",
-					"type": "image/png",
-					"sid": 320634930155548,
-					"icon-info": {
-						"purpose": "loading-logo"
 					}
 				}
 			],
@@ -144,9 +176,7 @@
 		}
 	},
 	"timelines": {
-		"items": [
-			"Timeline 1"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [],
@@ -161,16 +191,16 @@
 	"properties": {
 		"description": "",
 		"version": "1.0.0.0",
-		"author": "Bricnic",
-		"authorEmail": "bricnic@gmail.com",
+		"author": "Give me a Pixel",
+		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
-		"pixelRounding": true,
+		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "low",
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
@@ -196,7 +226,7 @@
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
-		"sampling": "nearest",
+		"sampling": "trilinear",
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
@@ -205,13 +235,13 @@
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "splash",
 		"preloadSounds": true,
-		"cordovaiOSScheme": "app",
-		"cordovaAndroidScheme": "https",
+		"cordovaiOSScheme": "file",
+		"cordovaAndroidScheme": "file",
 		"autoReloadScriptsOnPreview": false,
-		"exportFileStructure": "folders",
+		"exportFileStructure": "flat",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 1920,
-	"viewportHeight": 1080,
+	"viewportWidth": 768,
+	"viewportHeight": 480,
 	"firstLayout": null
 }

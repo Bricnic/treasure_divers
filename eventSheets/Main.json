@@ -1,0 +1,432 @@
+{
+	"name": "Main",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "dY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 657419024773373
+		},
+		{
+			"eventType": "variable",
+			"name": "dX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 445897674723113
+		},
+		{
+			"eventType": "comment",
+			"text": "THIS PROJECT WOULD NOT BE POSSIBLE WITHOUT THE SUPPORT AND HELP FROM @ooysyrag                                                                                                                                               https://www.construct.net/en/forum/construct-3/general-discussion-7/pasting-drawing-canvas-split-143168"
+		},
+		{
+			"eventType": "comment",
+			"text": "If you are to add more objects that you want to be on-screen, make sure to put them into families.                                                                                                                                                      Notice the extra blocks around the edges. You have to have those to keep the player in the middle of the screen or else the split-screen will not work right.                                                          Also notice the image point of the canvas is in the center, not in the top-left."
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Split Screen",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "clear-canvas",
+							"objectClass": "DrawingCanvas",
+							"sid": 482822974862501,
+							"parameters": {
+								"color": "rgba(0, 0, 0, 0)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 336328862123962,
+							"parameters": {
+								"variable": "dX",
+								"value": "Player_1.X-Player_2.X"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 994761182459419,
+							"parameters": {
+								"variable": "dY",
+								"value": "Player_1.Y-Player_2.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "All_Objects1",
+							"sid": 287256455688009,
+							"parameters": {
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "All_Objects2",
+							"sid": 571961453530609,
+							"parameters": {
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 446652699107163,
+							"parameters": {
+								"object": "All_Objects1",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 668275097500935,
+							"parameters": {
+								"object": "All_Objects2",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "All_Objects1",
+							"sid": 284978032510951,
+							"parameters": {
+								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "All_Objects2",
+							"sid": 526974032670148,
+							"parameters": {
+								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "DrawingCanvas",
+							"sid": 325418438713801,
+							"parameters": {
+								"x": "Player_2.X + ViewportWidth(\"Canvas\") / 2",
+								"y": "Player_2.Y"
+							}
+						},
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 879453690002422,
+							"parameters": {
+								"x": "Player_2.X + ViewportWidth(\"Canvas\") / 4",
+								"y": "Player_2.Y"
+							}
+						}
+					],
+					"sid": 971633496902458
+				}
+			],
+			"sid": 856862830467655
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 406151972850036,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_2",
+							"sid": 907830100798934,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2",
+							"sid": 548493645044368,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 396555979679807
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 433925213275663,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_2",
+							"sid": 147172525338616,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2",
+							"sid": 523672785337339,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 486964399417273
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 432972380952824,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_2",
+							"sid": 166964519198020,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 941432822211808
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 637829893192433,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1",
+							"sid": 318247996608286,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_1",
+							"sid": 276428655038494,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 262327854162055
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 244322204423277,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1",
+							"sid": 576272893666832,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_1",
+							"sid": 577041151914502,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 273251367187637
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 692369487188669,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1",
+							"sid": 803568700954656,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 900809648510280
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 699690441819533,
+							"parameters": {
+								"object": "Water"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Player_1",
+							"sid": 112502069494095,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_1",
+							"sid": 997573672002374,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "0.4"
+							}
+						}
+					],
+					"sid": 833328126180099
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-falling",
+							"objectClass": "Player_1",
+							"sid": 120390241748704,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 260528085455015,
+							"parameters": {
+								"object": "Water"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "reset-double-jump",
+							"objectClass": "Player_1",
+							"sid": 227722304382790,
+							"behaviorType": "Platform",
+							"parameters": {
+								"double-jump-allowed": true
+							}
+						}
+					],
+					"sid": 198113687653747
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 809388575194588,
+							"parameters": {
+								"object": "Water"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_1",
+							"sid": 113456580693269,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "100"
+							}
+						}
+					],
+					"sid": 654750307900772
+				}
+			],
+			"sid": 618158421335236
+		}
+	],
+	"sid": 390088743331416
+}

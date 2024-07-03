@@ -1,0 +1,12 @@
+{
+	"name": "Players",
+	"plugin-id": "Sprite",
+	"sid": 296282291814999,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Player_2",
+		"Player_1"
+	]
+}

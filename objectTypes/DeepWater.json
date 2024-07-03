@@ -1,7 +1,7 @@
 {
-	"name": "TiledBackground2",
+	"name": "DeepWater",
 	"plugin-id": "TiledBg",
-	"sid": 648256936080516,
+	"sid": 414745677166277,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 8310390,
+		"imageSpriteId": 8847976,
 		"useCollisionPoly": true,
 		"tag": ""
 	}
