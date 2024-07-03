@@ -87,6 +87,8 @@
 			"Player_1_Boat",
 			"TiledBackground2",
 			"TiledBackground3"
+			"TreasureChest",
+			"Gem"
 		],
 		"subfolders": []
 	},
@@ -98,19 +100,20 @@
 			"Backgrounds",
 			"Water",
 			"Players",
-			"Family1"
+			"Family1",
+			"CollectableObjects"
 		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"Diving World (bricnic)"
+			"Diving World (mlangille)"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Main (bricnic)"
+			"Main (mlangille)"
 		],
 		"subfolders": []
 	},

@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 39700,
-	"name": "Treasure Divers",
+	"name": "Treasure Divers- master",
 	"runtime": "c3",
 	"useWorker": "dom",
 	"bundleAddons": false,
@@ -29,8 +29,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -69,7 +83,10 @@
 			"DeepWater",
 			"TiledBackground4",
 			"WaterSurface",
-			"Player_1_Boat"
+			"Text",
+			"Player_1_Boat",
+			"TreasureChest",
+			"Gem"
 		],
 		"subfolders": []
 	},
@@ -80,19 +97,21 @@
 			"scrolling_objects",
 			"Backgrounds",
 			"Water",
-			"Players"
+			"Players",
+			"Family1",
+			"CollectableObjects"
 		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"Diving World"
+			"Diving World (mlangille)"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Main"
+			"Main (mlangille)"
 		],
 		"subfolders": []
 	},
@@ -199,8 +218,8 @@
 	"properties": {
 		"description": "",
 		"version": "1.0.0.0",
-		"author": "Give me a Pixel",
-		"authorEmail": "",
+		"author": "Bricnic",
+		"authorEmail": "bricnic@gmail.com",
 		"authorWebsite": "",
 		"appId": "",
 		"pixelRounding": false,

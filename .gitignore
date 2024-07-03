@@ -1,3 +1,4 @@
 bricnic/*.uistate.json
 master/*.uistate.json
 mlangille/*.uistate.json
+.DS_Store

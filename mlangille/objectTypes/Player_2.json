@@ -3,7 +3,36 @@
 	"plugin-id": "Sprite",
 	"sid": 830756711575685,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Score",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 551911190444511
+		},
+		{
+			"name": "CarryWeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 306067982438388
+		},
+		{
+			"name": "GemCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 443730396059721
+		},
+		{
+			"name": "TreasureChestCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 634563435497268
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Platform",

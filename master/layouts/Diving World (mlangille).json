@@ -1,5 +1,5 @@
 {
-	"name": "Diving World (bricnic)",
+	"name": "Diving World (mlangille)",
 	"layers": [
 		{
 			"name": "Game",
@@ -93,7 +93,11 @@
 					"uid": 5,
 					"instanceVariables": {
 						"InBoat": 0,
-						"TargetMaxSpeed": 250
+						"TargetMaxSpeed": 250,
+						"Score": 0,
+						"CarryWeight": 0,
+						"GemCount": 0,
+						"TreasureChestCount": 0
 					},
 					"behaviors": {
 						"Platform": {
@@ -140,7 +144,11 @@
 					"uid": 6,
 					"instanceVariables": {
 						"InBoat": 0,
-						"TargetMaxSpeed": 250
+						"TargetMaxSpeed": 250,
+						"Score": 0,
+						"CarryWeight": 0,
+						"GemCount": 0,
+						"TreasureChestCount": 0
 					},
 					"behaviors": {
 						"Platform": {
@@ -496,7 +504,65 @@
 					}
 				},
 				{
-					"type": "TiledBackground3",
+					"type": "Gem",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 17,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1431,
+						"y": 1152,
+						"width": 35,
+						"height": 52,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TreasureChest",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 16,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1635,
+						"y": 1181,
+						"width": 96,
+						"height": 96,
+						"originX": 0.14941176470588236,
+						"originY": 0.8965087281795511,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "DeepWater",
 					"properties": {
 						"initially-visible": true,
 						"origin": "top-left",
@@ -637,5 +703,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Main (bricnic)"
+	"eventSheet": "Main (mlangille)"
 }
