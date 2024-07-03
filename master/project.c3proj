@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 39700,
-	"name": "Treasure Divers- bricnic",
+	"name": "Treasure Divers-mlangille",
 	"runtime": "c3",
 	"useWorker": "dom",
 	"bundleAddons": false,
@@ -88,7 +88,8 @@
 			"TiledBackground2",
 			"TiledBackground3",
 			"TreasureChest",
-			"Gem"
+			"Gem",
+			"Barracade"
 		],
 		"subfolders": []
 	},

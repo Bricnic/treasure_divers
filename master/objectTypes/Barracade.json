@@ -1,0 +1,56 @@
+{
+	"name": "Barracade",
+	"plugin-id": "Sprite",
+	"sid": 127815574752362,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 506582598172603
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 84,
+						"height": 67,
+						"originX": 0.19047619047619047,
+						"originY": 0.47761194029850745,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9964434,
+						"collisionPoly": {
+							"points": [
+								0.4856603713262649,
+								0,
+								0.9940003894624242,
+								0.6138150798740676,
+								0.5462304978143608,
+								0.9603890945662313,
+								0,
+								0.7563403684701493
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 211761699096042,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

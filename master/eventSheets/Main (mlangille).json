@@ -72,6 +72,26 @@
 			"sid": 805053406811050
 		},
 		{
+			"eventType": "variable",
+			"name": "DigTimeSecs",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 609372388525235
+		},
+		{
+			"eventType": "variable",
+			"name": "BarracadeProximityCheck",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 364464889456903
+		},
+		{
 			"eventType": "comment",
 			"text": "THIS PROJECT WOULD NOT BE POSSIBLE WITHOUT THE SUPPORT AND HELP FROM @ooysyrag                                                                                                                                               https://www.construct.net/en/forum/construct-3/general-discussion-7/pasting-drawing-canvas-split-143168"
 		},
@@ -1270,6 +1290,220 @@
 				}
 			],
 			"sid": 414882662702868
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Barracade Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 386222684048210,
+							"parameters": {
+								"key": 16
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 784225282258066,
+							"parameters": {
+								"variable": "BarracadeProximityCheck",
+								"comparison": 4,
+								"value": "distance (Player_1.X, Player_1.Y,Barracade.X, Barracade.Y)"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_1",
+							"sid": 218984663042646,
+							"parameters": {
+								"instance-variable": "IsDigging"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_1",
+							"sid": 200637652149220,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_1",
+							"sid": 591713750451257,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player_1",
+							"sid": 543056203267471,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "0"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player_1",
+							"sid": 957943614203209,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 505000734104092,
+							"parameters": {
+								"seconds": "DigTimeSecs"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_1",
+							"sid": 375594519113962,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "false"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Barracade",
+							"sid": 235549756850816
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_1",
+							"sid": 802811111210099,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 953400267150188
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 689986232303317,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 472354723817866,
+							"parameters": {
+								"variable": "BarracadeProximityCheck",
+								"comparison": 4,
+								"value": "distance (Player_2.X, Player_2.Y,Barracade.X, Barracade.Y)"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_2",
+							"sid": 241884743162605,
+							"parameters": {
+								"instance-variable": "IsDigging"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_2",
+							"sid": 316397497246154,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_2",
+							"sid": 740059629458797,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player_2",
+							"sid": 909237596936039,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "0"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player_2",
+							"sid": 188170577457937,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 162128221536796,
+							"parameters": {
+								"seconds": "DigTimeSecs"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_2",
+							"sid": 201680271436936,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "false"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Barracade",
+							"sid": 371372413653294
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_2",
+							"sid": 538683192812961,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 417782241769601
+				}
+			],
+			"sid": 150785176752566
 		}
 	],
 	"sid": 390088743331416

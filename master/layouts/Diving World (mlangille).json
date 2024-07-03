@@ -97,7 +97,8 @@
 						"Score": 0,
 						"CarryWeight": 0,
 						"GemCount": 0,
-						"TreasureChestCount": 0
+						"TreasureChestCount": 0,
+						"IsDigging": false
 					},
 					"behaviors": {
 						"Platform": {
@@ -148,7 +149,8 @@
 						"Score": 0,
 						"CarryWeight": 0,
 						"GemCount": 0,
-						"TreasureChestCount": 0
+						"TreasureChestCount": 0,
+						"IsDigging": false
 					},
 					"behaviors": {
 						"Platform": {
@@ -487,12 +489,12 @@
 						}
 					},
 					"world": {
-						"x": 2048,
-						"y": 704,
+						"x": 2053.2432690625856,
+						"y": 780.4972455310426,
 						"width": 421.05263157894734,
 						"height": 291.7477477477477,
-						"originX": 0.5169811320754717,
-						"originY": 0.49404761904761907,
+						"originX": 0.1875,
+						"originY": 0.8023715415019763,
 						"color": [
 							1,
 							1,
@@ -551,6 +553,42 @@
 						"height": 96,
 						"originX": 0.14941176470588236,
 						"originY": 0.8965087281795511,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Barracade",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 14,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 2052.5,
+						"y": 1701,
+						"width": 102.19999999999999,
+						"height": 87.10000000000001,
+						"originX": 0.19047619047619047,
+						"originY": 0.47761194029850745,
 						"color": [
 							1,
 							1,

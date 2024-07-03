@@ -5,6 +5,20 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
+			"name": "InBoat",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 115680041490447
+		},
+		{
+			"name": "TargetMaxSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 717298693199480
+		},
+		{
 			"name": "Score",
 			"type": "number",
 			"desc": "",
@@ -31,6 +45,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 634563435497268
+		},
+		{
+			"name": "IsDigging",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 406205299966812
 		}
 	],
 	"behaviorTypes": [

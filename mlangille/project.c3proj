@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 39700,
-	"name": "Treasure Divers- master",
+	"name": "Treasure Divers-mlangille",
 	"runtime": "c3",
 	"useWorker": "dom",
 	"bundleAddons": false,
@@ -85,8 +85,11 @@
 			"WaterSurface",
 			"Text",
 			"Player_1_Boat",
+			"TiledBackground2",
+			"TiledBackground3",
 			"TreasureChest",
-			"Gem"
+			"Gem",
+			"Barracade"
 		],
 		"subfolders": []
 	},
@@ -268,7 +271,7 @@
 		"exportFileStructure": "flat",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 768,
-	"viewportHeight": 480,
+	"viewportWidth": 1600,
+	"viewportHeight": 1200,
 	"firstLayout": null
 }
