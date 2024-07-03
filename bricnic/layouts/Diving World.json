@@ -20,7 +20,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 0,
-						"y": 0,
+						"y": -32,
 						"width": 2304,
 						"height": 1440,
 						"originX": 0,
@@ -154,7 +154,7 @@
 					},
 					"world": {
 						"x": 1472,
-						"y": 832,
+						"y": 672,
 						"width": 63,
 						"height": 63,
 						"originX": 0.5,
