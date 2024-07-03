@@ -507,42 +507,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-gravity",
-							"objectClass": "Player_1",
-							"sid": 550581296866946,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "1000"
-							}
-						},
-						{
-							"id": "set-jump-strength",
-							"objectClass": "Player_1",
-							"sid": 394087108188694,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-strength": "500"
-							}
-						},
-						{
-							"id": "set-jump-sustain",
-							"objectClass": "Player_1",
-							"sid": 618912718260242,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-sustain": "500"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Player_1",
-							"sid": 872930962642811,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "1000"
-							}
-						},
-						{
 							"id": "set-double-jump",
 							"objectClass": "Player_1",
 							"sid": 332005458744738,
@@ -568,42 +532,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-gravity",
-							"objectClass": "Player_2",
-							"sid": 460857563737398,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "1000"
-							}
-						},
-						{
-							"id": "set-jump-strength",
-							"objectClass": "Player_2",
-							"sid": 239963408463038,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-strength": "500"
-							}
-						},
-						{
-							"id": "set-jump-sustain",
-							"objectClass": "Player_2",
-							"sid": 480509355801154,
-							"behaviorType": "Platform",
-							"parameters": {
-								"jump-sustain": "500"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Player_2",
-							"sid": 124972839970291,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "1000"
-							}
-						},
 						{
 							"id": "set-double-jump",
 							"objectClass": "Player_2",
