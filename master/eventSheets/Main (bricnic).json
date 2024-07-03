@@ -1,0 +1,1649 @@
+{
+	"name": "Main (bricnic)",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "dY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 657419024773373
+		},
+		{
+			"eventType": "variable",
+			"name": "dX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 445897674723113
+		},
+		{
+			"eventType": "variable",
+			"name": "GemWeight",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 192370403270535
+		},
+		{
+			"eventType": "variable",
+			"name": "TreasureChestWeight",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 967184587580031
+		},
+		{
+			"eventType": "variable",
+			"name": "MaxWeight",
+			"type": "number",
+			"initialValue": "12",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 343953147555351
+		},
+		{
+			"eventType": "variable",
+			"name": "GemScoreCount",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 884859610484335
+		},
+		{
+			"eventType": "variable",
+			"name": "TreasureChestScoreCount",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 805053406811050
+		},
+		{
+			"eventType": "variable",
+			"name": "DigTimeSecs",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 609372388525235
+		},
+		{
+			"eventType": "variable",
+			"name": "BarracadeProximityCheck",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 364464889456903
+		},
+		{
+			"eventType": "comment",
+			"text": "THIS PROJECT WOULD NOT BE POSSIBLE WITHOUT THE SUPPORT AND HELP FROM @ooysyrag                                                                                                                                               https://www.construct.net/en/forum/construct-3/general-discussion-7/pasting-drawing-canvas-split-143168"
+		},
+		{
+			"eventType": "comment",
+			"text": "If you are to add more objects that you want to be on-screen, make sure to put them into families.                                                                                                                                                      Notice the extra blocks around the edges. You have to have those to keep the player in the middle of the screen or else the split-screen will not work right.                                                          Also notice the image point of the canvas is in the center, not in the top-left."
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Split Screen",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "clear-canvas",
+							"objectClass": "DrawingCanvas",
+							"sid": 482822974862501,
+							"parameters": {
+								"color": "rgba(0, 0, 0, 0)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 336328862123962,
+							"parameters": {
+								"variable": "dX",
+								"value": "Player_1.X-Player_2.X"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 994761182459419,
+							"parameters": {
+								"variable": "dY",
+								"value": "Player_1.Y-Player_2.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "scrolling_objects",
+							"sid": 287256455688009,
+							"parameters": {
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Backgrounds",
+							"sid": 571961453530609,
+							"parameters": {
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 446652699107163,
+							"parameters": {
+								"object": "scrolling_objects",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 668275097500935,
+							"parameters": {
+								"object": "Backgrounds",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 998797894985044,
+							"parameters": {
+								"object": "Family1",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "scrolling_objects",
+							"sid": 284978032510951,
+							"parameters": {
+								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Backgrounds",
+							"sid": 526974032670148,
+							"parameters": {
+								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "DrawingCanvas",
+							"sid": 325418438713801,
+							"parameters": {
+								"x": "Player_2.X + ViewportWidth(\"Canvas\") / 2",
+								"y": "Player_2.Y"
+							}
+						},
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 879453690002422,
+							"parameters": {
+								"x": "Player_2.X + ViewportWidth(\"Canvas\") / 4",
+								"y": "Player_2.Y"
+							}
+						},
+						{
+							"id": "fill-linear-gradient",
+							"objectClass": "DrawingCanvas",
+							"sid": 797111046916402,
+							"parameters": {
+								"left": "800",
+								"top": "768",
+								"right": "3200",
+								"bottom": "8000",
+								"color1": "rgba(0, 0, 0, 0)",
+								"color2": "rgba(0, 0, 0, 210)",
+								"direction": "vertical"
+							}
+						}
+					],
+					"sid": 971633496902458
+				}
+			],
+			"sid": 856862830467655
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 406151972850036,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_2",
+							"sid": 907830100798934,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2",
+							"sid": 548493645044368,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 396555979679807
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 433925213275663,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_2",
+							"sid": 147172525338616,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2",
+							"sid": 523672785337339,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 486964399417273
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 432972380952824,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_2",
+							"sid": 166964519198020,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 941432822211808
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 637829893192433,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1",
+							"sid": 318247996608286,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_1",
+							"sid": 276428655038494,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 262327854162055
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 244322204423277,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1",
+							"sid": 576272893666832,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_1",
+							"sid": 577041151914502,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 273251367187637
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 692369487188669,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1",
+							"sid": 803568700954656,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 900809648510280
+				}
+			],
+			"sid": 618158421335236
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "BoatSpecific",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 282147429866586,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player_1",
+							"sid": 212169057151277,
+							"parameters": {
+								"x": "Player_1_Boat.X",
+								"y": "Player_1_Boat.Y"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_1",
+							"sid": 550899193856096,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 248046348982926
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 393871619953656,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 755102182373634,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 862383615471584,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_1",
+							"sid": 143195939448891,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player_1",
+							"sid": 264091358400226,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "350"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player_1",
+							"sid": 209790816613369,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "0"
+							}
+						}
+					],
+					"sid": 168606244647775
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_1",
+							"sid": 911438856958113,
+							"parameters": {
+								"object": "Player_1_Boat"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 443870559602147,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 463829718165096,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 731172771789932,
+							"parameters": {
+								"instance-variable": "Score",
+								"value": "Player_1.GemCount * GemScoreCount + Player_1.TreasureChestCount * TreasureChestScoreCount"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 985497761378469,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 195943401059367,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 537894977745743,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 442555730778083
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 895442568770382,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 608659465158033,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1_Boat",
+							"sid": 507870689987734,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_1_Boat",
+							"sid": 835767541147646,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 221650923876511
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 398368659151229,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 757148422821044,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_1_Boat",
+							"sid": 494067209087168,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_1_Boat",
+							"sid": 401599829906481,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 720014715156139
+				}
+			],
+			"sid": 147370845015709
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player_jumps",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 433103909583893,
+							"parameters": {
+								"object": "Water"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Player_1",
+							"sid": 581758211172524,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "reset-double-jump",
+							"objectClass": "Player_1",
+							"sid": 370616612251600,
+							"behaviorType": "Platform",
+							"parameters": {
+								"double-jump-allowed": true
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_1",
+							"sid": 384521759703616,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "300"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 810648683619414,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "450"
+							}
+						}
+					],
+					"sid": 342664472481317
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 422748429655926,
+							"parameters": {
+								"object": "Water"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Player_2",
+							"sid": 975000617760316,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "reset-double-jump",
+							"objectClass": "Player_2",
+							"sid": 675979757007737,
+							"behaviorType": "Platform",
+							"parameters": {
+								"double-jump-allowed": true
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_2",
+							"sid": 337680847941490,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "300"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 418298346173372,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "450"
+							}
+						}
+					],
+					"sid": 497192424835887
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 129691248162505,
+							"parameters": {
+								"object": "Water"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Player_1",
+							"sid": 332005458744738,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_1",
+							"sid": 564593010824800,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "800"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 389454081910427,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "700"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_1",
+							"sid": 219638940490310,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "min(Player_1.TargetMaxSpeed, Player_1.Platform.MaxSpeed + 100)"
+							}
+						}
+					],
+					"sid": 826128538342830
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 118340761673137,
+							"parameters": {
+								"object": "Water"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Player_2",
+							"sid": 244999323645852,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_2",
+							"sid": 654026002637232,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "800"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 124105765554933,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "700"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_2",
+							"sid": 630683863219446,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "min(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed + 100)"
+							}
+						}
+					],
+					"sid": 375302894667296
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 618733603274803,
+							"parameters": {
+								"key": 16
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 635869413894892,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "800"
+							}
+						}
+					],
+					"sid": 620024595733494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 426882969839710,
+							"parameters": {
+								"key": 16
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 507105359346441,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "450"
+							}
+						}
+					],
+					"sid": 257327695050417
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 381749014858240,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 557791683151261,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "800"
+							}
+						}
+					],
+					"sid": 942105136189374
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 718314266696454,
+							"parameters": {
+								"key": 69
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 684150443805086,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "450"
+							}
+						}
+					],
+					"sid": 566629167076455
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 508695115817693,
+							"parameters": {
+								"first-value": "Player_1.Platform.MaxSpeed",
+								"comparison": 2,
+								"second-value": "Player_1.TargetMaxSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_1",
+							"sid": 527122551784448,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "min(Player_1.TargetMaxSpeed, Player_1.Platform.MaxSpeed + 25)"
+							}
+						}
+					],
+					"sid": 680798708400151
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 818284075058524,
+							"parameters": {
+								"first-value": "Player_1.Platform.MaxSpeed",
+								"comparison": 4,
+								"second-value": "Player_1.TargetMaxSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_1",
+							"sid": 792267499343867,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "max(Player_1.TargetMaxSpeed, Player_1.Platform.MaxSpeed - 10)"
+							}
+						}
+					],
+					"sid": 753882931798737
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 235364635949542,
+							"parameters": {
+								"first-value": "Player_2.Platform.MaxSpeed",
+								"comparison": 2,
+								"second-value": "Player_2.TargetMaxSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_2",
+							"sid": 892092202970235,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "min(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed + 25)"
+							}
+						}
+					],
+					"sid": 858632856693513
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 371984606495587,
+							"parameters": {
+								"first-value": "Player_2.Platform.MaxSpeed",
+								"comparison": 4,
+								"second-value": "Player_2.TargetMaxSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_2",
+							"sid": 821274809320436,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "max(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed - 10)"
+							}
+						}
+					],
+					"sid": 612897532153764
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 777819961070129,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_1",
+							"sid": 337974328253638,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1500"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_1",
+							"sid": 289294013486582,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "2000"
+							}
+						}
+					],
+					"sid": 285118209562782
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 858667282505522,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_2",
+							"sid": 963716609634472,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1500"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_2",
+							"sid": 526698803122164,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "2000"
+							}
+						}
+					],
+					"sid": 957509293406354
+				}
+			],
+			"sid": 522787896268692
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collectibles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 952150423626335,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 186019906032715,
+							"parameters": {
+								"object": "Gem"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 218650745100549,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - GemWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Gem",
+							"sid": 864177295249410
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 706674688090451,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "GemWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 649135982207330,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 948556678561191
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 190127048552367,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 580233122276635,
+							"parameters": {
+								"object": "Gem"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 275438674036708,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - GemWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Gem",
+							"sid": 279678747018056
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 957474287628159,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "GemWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 286425216094900,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 745818551782866
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 694384670685494,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 169293999350063,
+							"parameters": {
+								"object": "TreasureChest"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 519872228404417,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - TreasureChestWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "TreasureChest",
+							"sid": 448135018634512
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 113484880385377,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "TreasureChestWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 485453729690990,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 391827774883645
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 439003677481608,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 383796791004912,
+							"parameters": {
+								"object": "TreasureChest"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 964147213696934,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - TreasureChestWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "TreasureChest",
+							"sid": 583352155225170
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 188536910332726,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "TreasureChestWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 483687256877126,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 807588998513954
+				}
+			],
+			"sid": 414882662702868
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Barracade Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 386222684048210,
+							"parameters": {
+								"key": 16
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 784225282258066,
+							"parameters": {
+								"variable": "BarracadeProximityCheck",
+								"comparison": 4,
+								"value": "distance (Player_1.X, Player_1.Y,Barracade.X, Barracade.Y)"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_1",
+							"sid": 218984663042646,
+							"parameters": {
+								"instance-variable": "IsDigging"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_1",
+							"sid": 200637652149220,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_1",
+							"sid": 591713750451257,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player_1",
+							"sid": 543056203267471,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "0"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player_1",
+							"sid": 957943614203209,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 505000734104092,
+							"parameters": {
+								"seconds": "DigTimeSecs"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_1",
+							"sid": 375594519113962,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "false"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Barracade",
+							"sid": 235549756850816
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_1",
+							"sid": 802811111210099,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 953400267150188
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 689986232303317,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 472354723817866,
+							"parameters": {
+								"variable": "BarracadeProximityCheck",
+								"comparison": 4,
+								"value": "distance (Player_2.X, Player_2.Y,Barracade.X, Barracade.Y)"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_2",
+							"sid": 241884743162605,
+							"parameters": {
+								"instance-variable": "IsDigging"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_2",
+							"sid": 316397497246154,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_2",
+							"sid": 740059629458797,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player_2",
+							"sid": 909237596936039,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "0"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player_2",
+							"sid": 188170577457937,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 162128221536796,
+							"parameters": {
+								"seconds": "DigTimeSecs"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_2",
+							"sid": 201680271436936,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "false"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Barracade",
+							"sid": 371372413653294
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_2",
+							"sid": 538683192812961,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 417782241769601
+				}
+			],
+			"sid": 150785176752566
+		}
+	],
+	"sid": 390088743331416
+}

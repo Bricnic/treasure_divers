@@ -22,6 +22,56 @@
 			"sid": 445897674723113
 		},
 		{
+			"eventType": "variable",
+			"name": "GemWeight",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 192370403270535
+		},
+		{
+			"eventType": "variable",
+			"name": "TreasureChestWeight",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 967184587580031
+		},
+		{
+			"eventType": "variable",
+			"name": "MaxWeight",
+			"type": "number",
+			"initialValue": "12",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 343953147555351
+		},
+		{
+			"eventType": "variable",
+			"name": "GemScoreCount",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 884859610484335
+		},
+		{
+			"eventType": "variable",
+			"name": "TreasureChestScoreCount",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 805053406811050
+		},
+		{
 			"eventType": "comment",
 			"text": "THIS PROJECT WOULD NOT BE POSSIBLE WITHOUT THE SUPPORT AND HELP FROM @ooysyrag                                                                                                                                               https://www.construct.net/en/forum/construct-3/general-discussion-7/pasting-drawing-canvas-split-143168"
 		},
@@ -495,6 +545,42 @@
 								"instance-variable": "InBoat",
 								"value": "1"
 							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 731172771789932,
+							"parameters": {
+								"instance-variable": "Score",
+								"value": "Player_1.GemCount * GemScoreCount + Player_1.TreasureChestCount * TreasureChestScoreCount"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 985497761378469,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 195943401059367,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 537894977745743,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 442555730778083
@@ -629,19 +715,19 @@
 						{
 							"id": "set-max-fall-speed",
 							"objectClass": "Player_1",
-							"sid": 593986270353100,
+							"sid": 384521759703616,
 							"behaviorType": "Platform",
 							"parameters": {
-								"max-fall-speed": "100"
+								"max-fall-speed": "300"
 							}
 						},
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_1",
-							"sid": 871818621445520,
+							"sid": 810648683619414,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "150"
+								"value": "450"
 							}
 						}
 					],
@@ -653,7 +739,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 385409353108665,
+							"sid": 422748429655926,
 							"parameters": {
 								"object": "Water"
 							}
@@ -663,7 +749,7 @@
 						{
 							"id": "set-double-jump",
 							"objectClass": "Player_2",
-							"sid": 249114758696982,
+							"sid": 975000617760316,
 							"behaviorType": "Platform",
 							"parameters": {
 								"state": "enabled"
@@ -672,7 +758,7 @@
 						{
 							"id": "reset-double-jump",
 							"objectClass": "Player_2",
-							"sid": 196853874065827,
+							"sid": 675979757007737,
 							"behaviorType": "Platform",
 							"parameters": {
 								"double-jump-allowed": true
@@ -681,23 +767,23 @@
 						{
 							"id": "set-max-fall-speed",
 							"objectClass": "Player_2",
-							"sid": 305849878890451,
+							"sid": 337680847941490,
 							"behaviorType": "Platform",
 							"parameters": {
-								"max-fall-speed": "100"
+								"max-fall-speed": "300"
 							}
 						},
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 165292435254380,
+							"sid": 418298346173372,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "150"
+								"value": "450"
 							}
 						}
 					],
-					"sid": 926074925113942
+					"sid": 497192424835887
 				},
 				{
 					"eventType": "block",
@@ -725,19 +811,19 @@
 						{
 							"id": "set-max-fall-speed",
 							"objectClass": "Player_1",
-							"sid": 245018897003300,
+							"sid": 564593010824800,
 							"behaviorType": "Platform",
 							"parameters": {
-								"max-fall-speed": "600"
+								"max-fall-speed": "800"
 							}
 						},
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_1",
-							"sid": 518961075345081,
+							"sid": 389454081910427,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "250"
+								"value": "700"
 							}
 						},
 						{
@@ -758,7 +844,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 606897599844209,
+							"sid": 118340761673137,
 							"parameters": {
 								"object": "Water"
 							},
@@ -769,7 +855,7 @@
 						{
 							"id": "set-double-jump",
 							"objectClass": "Player_2",
-							"sid": 689581663108766,
+							"sid": 244999323645852,
 							"behaviorType": "Platform",
 							"parameters": {
 								"state": "disabled"
@@ -778,32 +864,32 @@
 						{
 							"id": "set-max-fall-speed",
 							"objectClass": "Player_2",
-							"sid": 958395902043668,
+							"sid": 654026002637232,
 							"behaviorType": "Platform",
 							"parameters": {
-								"max-fall-speed": "600"
+								"max-fall-speed": "800"
 							}
 						},
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 395224970903461,
+							"sid": 124105765554933,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "250"
+								"value": "700"
 							}
 						},
 						{
 							"id": "set-max-speed",
 							"objectClass": "Player_2",
-							"sid": 615923749342010,
+							"sid": 630683863219446,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "min(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed + 100)"
 							}
 						}
 					],
-					"sid": 777830806189693
+					"sid": 375302894667296
 				},
 				{
 					"eventType": "block",
@@ -821,10 +907,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_1",
-							"sid": 329759668279934,
+							"sid": 635869413894892,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "300"
+								"value": "800"
 							}
 						}
 					],
@@ -847,14 +933,65 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_1",
-							"sid": 747180820091461,
+							"sid": 507105359346441,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "150"
+								"value": "450"
 							}
 						}
 					],
 					"sid": 257327695050417
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 381749014858240,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 557791683151261,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "800"
+							}
+						}
+					],
+					"sid": 942105136189374
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 718314266696454,
+							"parameters": {
+								"key": 69
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 684150443805086,
+							"parameters": {
+								"instance-variable": "TargetMaxSpeed",
+								"value": "450"
+							}
+						}
+					],
+					"sid": 566629167076455
 				},
 				{
 					"eventType": "block",
@@ -914,6 +1051,60 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 235364635949542,
+							"parameters": {
+								"first-value": "Player_2.Platform.MaxSpeed",
+								"comparison": 2,
+								"second-value": "Player_2.TargetMaxSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_2",
+							"sid": 892092202970235,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "min(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed + 25)"
+							}
+						}
+					],
+					"sid": 858632856693513
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 371984606495587,
+							"parameters": {
+								"first-value": "Player_2.Platform.MaxSpeed",
+								"comparison": 4,
+								"second-value": "Player_2.TargetMaxSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_2",
+							"sid": 821274809320436,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "max(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed - 10)"
+							}
+						}
+					],
+					"sid": 612897532153764
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
 							"sid": 777819961070129,
@@ -926,26 +1117,298 @@
 						{
 							"id": "set-gravity",
 							"objectClass": "Player_1",
-							"sid": 629668694782349,
+							"sid": 337974328253638,
 							"behaviorType": "Platform",
 							"parameters": {
-								"gravity": "2000"
+								"gravity": "1500"
 							}
 						},
 						{
 							"id": "set-max-fall-speed",
 							"objectClass": "Player_1",
-							"sid": 598654051660871,
+							"sid": 289294013486582,
 							"behaviorType": "Platform",
 							"parameters": {
-								"max-fall-speed": "3000"
+								"max-fall-speed": "2000"
 							}
 						}
 					],
 					"sid": 285118209562782
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 858667282505522,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_2",
+							"sid": 963716609634472,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1500"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_2",
+							"sid": 526698803122164,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "2000"
+							}
+						}
+					],
+					"sid": 957509293406354
 				}
 			],
 			"sid": 522787896268692
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collectibles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 952150423626335,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 186019906032715,
+							"parameters": {
+								"object": "Gem"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 218650745100549,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - GemWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Gem",
+							"sid": 864177295249410
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 706674688090451,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "GemWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 649135982207330,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 948556678561191
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 190127048552367,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 580233122276635,
+							"parameters": {
+								"object": "Gem"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 275438674036708,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - GemWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Gem",
+							"sid": 279678747018056
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 957474287628159,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "GemWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 286425216094900,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 745818551782866
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 694384670685494,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_1",
+							"sid": 169293999350063,
+							"parameters": {
+								"object": "TreasureChest"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 519872228404417,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - TreasureChestWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "TreasureChest",
+							"sid": 448135018634512
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 113484880385377,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "TreasureChestWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 485453729690990,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 391827774883645
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 439003677481608,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 383796791004912,
+							"parameters": {
+								"object": "TreasureChest"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 964147213696934,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - TreasureChestWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "TreasureChest",
+							"sid": 583352155225170
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 188536910332726,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "TreasureChestWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 483687256877126,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 807588998513954
+				}
+			],
+			"sid": 414882662702868
 		}
 	],
 	"sid": 390088743331416

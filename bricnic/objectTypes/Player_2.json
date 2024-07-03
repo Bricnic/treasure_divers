@@ -17,6 +17,34 @@
 			"desc": "",
 			"show": true,
 			"sid": 717298693199480
+		},
+		{
+			"name": "Score",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 551911190444511
+		},
+		{
+			"name": "CarryWeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 306067982438388
+		},
+		{
+			"name": "GemCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 443730396059721
+		},
+		{
+			"name": "TreasureChestCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 634563435497268
 		}
 	],
 	"behaviorTypes": [
@@ -32,14 +60,14 @@
 			{
 				"frames": [
 					{
-						"width": 63,
-						"height": 63,
+						"width": 158,
+						"height": 200,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9629001,
+						"imageSpriteId": 3254690,
 						"collisionPoly": {
 							"points": [
 								0.02702702702702703,
