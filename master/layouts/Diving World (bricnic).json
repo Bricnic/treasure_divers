@@ -1,5 +1,5 @@
 {
-	"name": "Diving World (mlangille)",
+	"name": "Diving World (bricnic)",
 	"layers": [
 		{
 			"name": "Game",
@@ -19,12 +19,104 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 800,
-						"y": -512,
-						"width": 2407.6190476190477,
-						"height": 8000,
-						"originX": 0.0015822784810126582,
-						"originY": 0.0005,
+						"x": 806,
+						"y": -302,
+						"width": 4406.570247325367,
+						"height": 9294.75,
+						"originX": 0.0018863964318509773,
+						"originY": 0.056610167610167614,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Ground",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 14,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1982,
+						"y": 989,
+						"width": 151,
+						"height": 633,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Ground",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 11,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1209,
+						"y": 1622,
+						"width": 925,
+						"height": 128,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -66,9 +158,9 @@
 					},
 					"world": {
 						"x": 0,
-						"y": 0,
+						"y": -827,
 						"width": 800,
-						"height": 8000,
+						"height": 8827,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -93,7 +185,7 @@
 					"uid": 5,
 					"instanceVariables": {
 						"InBoat": 0,
-						"TargetMaxSpeed": 250,
+						"TargetMaxSpeed": 450,
 						"Score": 0,
 						"CarryWeight": 0,
 						"GemCount": 0,
@@ -102,10 +194,10 @@
 					"behaviors": {
 						"Platform": {
 							"properties": {
-								"max-speed": 250,
+								"max-speed": 450,
 								"acceleration": 800,
 								"deceleration": 800,
-								"jump-strength": 350,
+								"jump-strength": 500,
 								"gravity": 800,
 								"max-fall-speed": 200,
 								"double-jump": false,
@@ -169,8 +261,8 @@
 					"world": {
 						"x": 2272,
 						"y": 672,
-						"width": 63,
-						"height": 63,
+						"width": 158,
+						"height": 200,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -213,10 +305,10 @@
 						}
 					},
 					"world": {
-						"x": 3200,
-						"y": 0,
+						"x": 5200,
+						"y": -828,
 						"width": 800,
-						"height": 8000,
+						"height": 8828,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -305,9 +397,9 @@
 						}
 					},
 					"world": {
-						"x": 1056,
-						"y": 864,
-						"width": 256,
+						"x": 801,
+						"y": 1291,
+						"width": 925,
 						"height": 128,
 						"originX": 0,
 						"originY": 0,
@@ -368,45 +460,6 @@
 					}
 				},
 				{
-					"type": "DeepWater",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 11,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 800,
-						"y": 800,
-						"width": 2400,
-						"height": 6080,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							0.5
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "WaterSurface",
 					"properties": {
 						"initially-visible": true,
@@ -429,9 +482,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 800,
-						"y": 768,
-						"width": 2400,
+						"x": 801,
+						"y": 270,
+						"width": 4400,
 						"height": 32,
 						"originX": 0,
 						"originY": 0,
@@ -487,8 +540,8 @@
 						}
 					},
 					"world": {
-						"x": 2048,
-						"y": 704,
+						"x": 2311,
+						"y": 204,
 						"width": 421.05263157894734,
 						"height": 291.7477477477477,
 						"originX": 0.5169811320754717,
@@ -516,8 +569,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1431,
-						"y": 1152,
+						"x": 1658,
+						"y": 1246,
 						"width": 35,
 						"height": 52,
 						"originX": 0.5,
@@ -545,8 +598,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1635,
-						"y": 1181,
+						"x": 1261,
+						"y": 1607,
 						"width": 96,
 						"height": 96,
 						"originX": 0.14941176470588236,
@@ -584,10 +637,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 799,
-						"y": 783,
-						"width": 2401,
-						"height": 6769,
+						"x": 802,
+						"y": 288,
+						"width": 4398,
+						"height": 6329,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -697,11 +750,11 @@
 	"sid": 465499775276113,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 4000,
+	"width": 6000,
 	"height": 8000,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Main (mlangille)"
+	"eventSheet": "Main (bricnic)"
 }
