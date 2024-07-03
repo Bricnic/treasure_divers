@@ -1,41 +1,30 @@
 {
-	"name": "Player_1_Boat",
+	"name": "TreasureChest",
 	"plugin-id": "Sprite",
-	"sid": 321699111910397,
+	"sid": 579837029982533,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Sin",
-			"name": "Sine",
-			"sid": 227843212206321
-		},
-		{
-			"behaviorId": "Platform",
-			"name": "Platform",
-			"sid": 174780676073431
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 304,
-						"height": 222,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 850,
+						"height": 802,
+						"originX": 0.14941176470588236,
+						"originY": 0.8965087281795511,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3146074,
+						"imageSpriteId": 5076688,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 702317057467647,
+				"sid": 361239627362857,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

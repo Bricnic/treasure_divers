@@ -10,6 +10,34 @@
 			"desc": "",
 			"show": true,
 			"sid": 768587368261015
+		},
+		{
+			"name": "Score",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 254717569280704
+		},
+		{
+			"name": "CarryWeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 470740764577739
+		},
+		{
+			"name": "GemCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 655448770150611
+		},
+		{
+			"name": "TreasureChestCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 987384712739751
 		}
 	],
 	"behaviorTypes": [

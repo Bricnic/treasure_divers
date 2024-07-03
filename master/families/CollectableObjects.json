@@ -1,15 +1,11 @@
 {
-	"name": "scrolling_objects",
+	"name": "CollectableObjects",
 	"plugin-id": "Sprite",
-	"sid": 986150408572834,
+	"sid": 754001414821412,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"Player_1",
-		"Player_2",
-		"Background",
-		"Player_1_Boat",
 		"Gem",
 		"TreasureChest"
 	]
