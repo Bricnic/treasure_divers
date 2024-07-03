@@ -1,0 +1,11 @@
+{
+	"name": "Family1",
+	"plugin-id": "Text",
+	"sid": 672678017639342,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Text"
+	]
+}

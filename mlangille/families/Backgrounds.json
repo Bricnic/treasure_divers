@@ -1,0 +1,15 @@
+{
+	"name": "Backgrounds",
+	"plugin-id": "TiledBg",
+	"sid": 323561145563656,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Ground",
+		"TiledBackground",
+		"DeepWater",
+		"TiledBackground4",
+		"WaterSurface"
+	]
+}
