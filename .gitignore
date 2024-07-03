@@ -1,3 +1,3 @@
-bricnic/project.uistate.json
-master/project.uistate.json
-mlangille/project.uistate.json
+bricnic/*.uistate.json
+master/*.uistate.json
+mlangille/*.uistate.json
