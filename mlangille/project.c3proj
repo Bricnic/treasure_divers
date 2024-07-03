@@ -29,13 +29,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -43,15 +36,15 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Anchor",
-			"name": "Anchor",
+			"id": "Platform",
+			"name": "Platform",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Platform",
-			"name": "Platform",
+			"id": "Sin",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -76,7 +69,7 @@
 			"DeepWater",
 			"TiledBackground4",
 			"WaterSurface",
-			"Text"
+			"Player_1_Boat"
 		],
 		"subfolders": []
 	},
@@ -87,8 +80,7 @@
 			"scrolling_objects",
 			"Backgrounds",
 			"Water",
-			"Players",
-			"Family1"
+			"Players"
 		],
 		"subfolders": []
 	},
@@ -207,8 +199,8 @@
 	"properties": {
 		"description": "",
 		"version": "1.0.0.0",
-		"author": "Bricnic",
-		"authorEmail": "bricnic@gmail.com",
+		"author": "Give me a Pixel",
+		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
 		"pixelRounding": false,
