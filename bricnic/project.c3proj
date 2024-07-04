@@ -119,7 +119,8 @@
 			"Water",
 			"Players",
 			"Player1TextHUD",
-			"CollectableObjects"
+			"CollectableObjects",
+			"Sparks"
 		],
 		"subfolders": []
 	},

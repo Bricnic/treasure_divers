@@ -166,7 +166,7 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 446652699107163,
+							"sid": 576553103018621,
 							"parameters": {
 								"object": "scrolling_objects",
 								"effects": "with-effects"
@@ -187,6 +187,15 @@
 							"sid": 998797894985044,
 							"parameters": {
 								"object": "Player1TextHUD",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 427946754752240,
+							"parameters": {
+								"object": "Sparks",
 								"effects": "with-effects"
 							}
 						},
@@ -1669,205 +1678,45 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 386222684048210,
-							"parameters": {
-								"key": 16
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 784225282258066,
-							"parameters": {
-								"variable": "BarricadeProximityCheck",
-								"comparison": 4,
-								"value": "distance (Player_1.X, Player_1.Y,Barricade.X, Barricade.Y)"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
+							"id": "is-overlapping-another-object",
 							"objectClass": "Player_1",
-							"sid": 218984663042646,
+							"sid": 448951774854274,
 							"parameters": {
-								"instance-variable": "IsDigging"
+								"object": "rock_mask"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Player_1",
+							"sid": 625698053435631,
+							"parameters": {
+								"animation": "\"Blowtorch\""
 							},
 							"isInverted": true
+						},
+						{
+							"id": "compare-speed",
+							"objectClass": "Player_1",
+							"sid": 318697443427436,
+							"behaviorType": "Platform",
+							"parameters": {
+								"comparison": 3,
+								"speed": "150"
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-boolean-instvar",
+							"id": "set-animation",
 							"objectClass": "Player_1",
-							"sid": 200637652149220,
+							"sid": 879083572946750,
 							"parameters": {
-								"instance-variable": "IsDigging",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Player_1",
-							"sid": 591713750451257,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-vector-x",
-							"objectClass": "Player_1",
-							"sid": 543056203267471,
-							"behaviorType": "Platform",
-							"parameters": {
-								"vector-x": "0"
-							}
-						},
-						{
-							"id": "set-vector-y",
-							"objectClass": "Player_1",
-							"sid": 957943614203209,
-							"behaviorType": "Platform",
-							"parameters": {
-								"vector-y": "0"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 505000734104092,
-							"parameters": {
-								"seconds": "DigTimeSecs"
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Player_1",
-							"sid": 375594519113962,
-							"parameters": {
-								"instance-variable": "IsDigging",
-								"value": "false"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Barricade",
-							"sid": 235549756850816
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Player_1",
-							"sid": 802811111210099,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "enabled"
+								"animation": "\"Blowtorch\"",
+								"from": "beginning"
 							}
 						}
 					],
-					"sid": 953400267150188
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 689986232303317,
-							"parameters": {
-								"key": 69
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 472354723817866,
-							"parameters": {
-								"variable": "BarricadeProximityCheck",
-								"comparison": 4,
-								"value": "distance (Player_2.X, Player_2.Y,Barricade.X, Barricade.Y)"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Player_2",
-							"sid": 241884743162605,
-							"parameters": {
-								"instance-variable": "IsDigging"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Player_2",
-							"sid": 316397497246154,
-							"parameters": {
-								"instance-variable": "IsDigging",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Player_2",
-							"sid": 740059629458797,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-vector-x",
-							"objectClass": "Player_2",
-							"sid": 909237596936039,
-							"behaviorType": "Platform",
-							"parameters": {
-								"vector-x": "0"
-							}
-						},
-						{
-							"id": "set-vector-y",
-							"objectClass": "Player_2",
-							"sid": 188170577457937,
-							"behaviorType": "Platform",
-							"parameters": {
-								"vector-y": "0"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 162128221536796,
-							"parameters": {
-								"seconds": "DigTimeSecs"
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Player_2",
-							"sid": 201680271436936,
-							"parameters": {
-								"instance-variable": "IsDigging",
-								"value": "false"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Barricade",
-							"sid": 371372413653294
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Player_2",
-							"sid": 538683192812961,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "enabled"
-							}
-						}
-					],
-					"sid": 417782241769601
+					"sid": 709345122125010
 				},
 				{
 					"eventType": "block",
@@ -1919,44 +1768,18 @@
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_1",
+							"sid": 315133364065518,
+							"parameters": {
+								"instance-variable": "IsDigging",
+								"value": "true"
+							}
 						}
 					],
 					"sid": 514062968519010
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_1",
-							"sid": 809060066003290,
-							"parameters": {
-								"object": "rock_mask"
-							}
-						},
-						{
-							"id": "compare-speed",
-							"objectClass": "Player_1",
-							"sid": 676804876437789,
-							"behaviorType": "Platform",
-							"parameters": {
-								"comparison": 3,
-								"speed": "150"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Player_1",
-							"sid": 992904613984056,
-							"parameters": {
-								"animation": "\"Blowtorch\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 654536140837597
 				},
 				{
 					"eventType": "block",
@@ -2053,6 +1876,15 @@
 							"parameters": {
 								"degrees": "180"
 							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Barricade",
+							"sid": 916693028089821,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "5"
+							}
 						}
 					],
 					"sid": 459144967020446
@@ -2071,17 +1903,205 @@
 					],
 					"actions": [
 						{
-							"id": "set-velocity",
+							"id": "destroy",
 							"objectClass": "Spark",
-							"sid": 965974172348148,
-							"behaviorType": "Physics",
-							"parameters": {
-								"x-component": "0",
-								"y-component": "0"
-							}
+							"sid": 151477201368361
 						}
 					],
 					"sid": 572434813956329
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Barricade",
+							"sid": 289660616284603,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "200"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Barricade",
+							"sid": 149360403480246,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 508634428112128
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Barricade",
+							"sid": 988514704149130,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Barricade",
+							"sid": 576911518475771,
+							"parameters": {
+								"frame-number": "2"
+							}
+						}
+					],
+					"sid": 637542182031249
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Barricade",
+							"sid": 164568277701095,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Barricade",
+							"sid": 106051920618857
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 848178903140353,
+							"parameters": {
+								"object": "Spark",
+								"layer": "0",
+								"image-point": "\"Blowtorch\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 209370560858395,
+							"parameters": {
+								"object": "Spark",
+								"layer": "0",
+								"image-point": "\"Blowtorch\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 633588242701138,
+							"parameters": {
+								"object": "Spark",
+								"layer": "0",
+								"image-point": "\"Blowtorch\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 863421625910469,
+							"parameters": {
+								"object": "Spark",
+								"layer": "0",
+								"image-point": "\"Blowtorch\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 997443333018321,
+							"parameters": {
+								"object": "Spark",
+								"layer": "0",
+								"image-point": "\"Blowtorch\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 666672831718368,
+							"parameters": {
+								"object": "Spark",
+								"layer": "0",
+								"image-point": "\"Blowtorch\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 262248290719586,
+							"parameters": {
+								"object": "Spark",
+								"layer": "0",
+								"image-point": "\"Blowtorch\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 340326580841646,
+							"parameters": {
+								"object": "Spark",
+								"layer": "0",
+								"image-point": "\"Blowtorch\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 704858290771427
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "rock_mask",
+							"sid": 708562532712247,
+							"parameters": {
+								"object": "Barricade"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "rock_mask",
+							"sid": 871794585444171
+						}
+					],
+					"sid": 391222041551597
 				}
 			],
 			"sid": 150785176752566

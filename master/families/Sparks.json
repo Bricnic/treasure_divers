@@ -1,0 +1,11 @@
+{
+	"name": "Sparks",
+	"plugin-id": "Sprite",
+	"sid": 293643834980010,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Spark"
+	]
+}

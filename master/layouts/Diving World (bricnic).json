@@ -568,7 +568,9 @@
 						"live-preview": false
 					},
 					"uid": 14,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Health": 300
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -581,7 +583,7 @@
 						"x": 1674,
 						"y": 1536,
 						"width": 240.01580637311682,
-						"height": 210.9550879986785,
+						"height": 210.95508799867852,
 						"originX": 0.1704623878536922,
 						"originY": 0.46531778795989653,
 						"color": [
@@ -776,8 +778,8 @@
 					"world": {
 						"x": 671,
 						"y": 601,
-						"width": 25,
-						"height": 25,
+						"width": 50,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -794,7 +796,7 @@
 				{
 					"type": "rock_mask",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
