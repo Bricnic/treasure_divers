@@ -169,8 +169,17 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "scrolling_objects",
-							"sid": 287256455688009,
+							"objectClass": "Player1TextHUD",
+							"sid": 742689841299617,
+							"parameters": {
+								"x": "Player_1.X - 380 - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Player_1.Y - 530 - dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ForegroundWalls",
+							"sid": 672409048737970,
 							"parameters": {
 								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y - dY"
@@ -178,7 +187,16 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "Backgrounds",
+							"objectClass": "Sparks",
+							"sid": 296951898171960,
+							"parameters": {
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ForeWater",
 							"sid": 571961453530609,
 							"parameters": {
 								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
@@ -187,17 +205,53 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "Player1TextHUD",
-							"sid": 104861732092568,
+							"objectClass": "scrolling_objects",
+							"sid": 154518035427146,
 							"parameters": {
-								"x": "Player_1.X - 380",
-								"y": "Player_1.Y - 580"
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "SemiDistantBackground",
+							"sid": 909142644265753,
+							"parameters": {
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "DistantBackground",
+							"sid": 372994555123812,
+							"parameters": {
+								"x": "Self.X - (dX / 10 ) + (ViewportWidth(\"Canvas\") / 20)",
+								"y": "Self.Y - (dY)"
 							}
 						},
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 576553103018621,
+							"sid": 649768862770574,
+							"parameters": {
+								"object": "DistantBackground",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 572680167235084,
+							"parameters": {
+								"object": "SemiDistantBackground",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 413107520512627,
 							"parameters": {
 								"object": "scrolling_objects",
 								"effects": "with-effects"
@@ -206,18 +260,9 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 447449154472898,
+							"sid": 422715813928785,
 							"parameters": {
-								"object": "Player1TextHUD",
-								"effects": "with-effects"
-							}
-						},
-						{
-							"id": "paste-object",
-							"objectClass": "DrawingCanvas",
-							"sid": 668275097500935,
-							"parameters": {
-								"object": "Backgrounds",
+								"object": "ForeWater",
 								"effects": "with-effects"
 							}
 						},
@@ -231,8 +276,35 @@
 							}
 						},
 						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 237645042893281,
+							"parameters": {
+								"object": "ForegroundWalls",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 595650774892778,
+							"parameters": {
+								"object": "Player1TextHUD",
+								"effects": "with-effects"
+							}
+						},
+						{
 							"id": "set-position",
-							"objectClass": "scrolling_objects",
+							"objectClass": "ForegroundWalls",
+							"sid": 216910164480611,
+							"parameters": {
+								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Sparks",
 							"sid": 284978032510951,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
@@ -241,11 +313,38 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "Backgrounds",
+							"objectClass": "scrolling_objects",
+							"sid": 942575529413594,
+							"parameters": {
+								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ForeWater",
 							"sid": 526974032670148,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "SemiDistantBackground",
+							"sid": 849282228059613,
+							"parameters": {
+								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "DistantBackground",
+							"sid": 148287994799049,
+							"parameters": {
+								"x": "Self.X + (dX / 10) - (ViewportWidth(\"Canvas\") / 20)",
+								"y": "Self.Y + (dY)"
 							}
 						},
 						{
@@ -801,14 +900,6 @@
 							"parameters": {
 								"magnitude": "15 - (Player_1_Boat.Platform.Speed / 50)"
 							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Player_1_text",
-							"sid": 566757576176339,
-							"parameters": {
-								"text": "\"MPH: \" & round(Player_1_Boat.Platform.Speed / 20)"
-							}
 						}
 					],
 					"sid": 953784580344023
@@ -867,6 +958,576 @@
 				}
 			],
 			"sid": 147370845015709
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player 2 Boat",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 814057932951514,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "Player_2",
+							"sid": 722413076393329,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "Player_2_Boat.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player_2",
+							"sid": 837692918219996,
+							"parameters": {
+								"animation": "\"Face\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "Player_2",
+							"sid": 733397436346316,
+							"parameters": {
+								"x": "Player_2.X - ceil((Player_2.X - Player_2_Boat.X) * 0.01)"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2",
+							"sid": 922039184828191,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 579522607987614
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 258888499111392,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "Player_2",
+							"sid": 867744339704780,
+							"parameters": {
+								"comparison": 2,
+								"x-co-ordinate": "Player_2_Boat.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player_2",
+							"sid": 932872776955508,
+							"parameters": {
+								"animation": "\"Face\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "Player_2",
+							"sid": 300116890546344,
+							"parameters": {
+								"x": "Player_2.X + ceil((Player_2_Boat.X - Player_2.X) * 0.01)"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2",
+							"sid": 566988895899033,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 387825269051410
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 664439020995998,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Player_2",
+							"sid": 601129278143086,
+							"parameters": {
+								"y": "Player_2.Y - (((Player_2.Y - Player_2_Boat.Y) * 0.1))"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_2",
+							"sid": 764147149116701,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Player_2",
+							"sid": 601602488912201,
+							"parameters": {
+								"opacity": "max(0, min(75, (abs(Player_2.Y - Player_2_Boat.Y) + abs(Player_2.X - Player_2_Boat.X) / 2)))"
+							}
+						}
+					],
+					"sid": 185018399324296
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 178040608767826,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 702856955629399,
+							"parameters": {
+								"first-value": "abs(Player_2.X - Player_2_Boat.X) + abs(Player_2.Y - Player_2_Boat.Y)",
+								"comparison": 2,
+								"second-value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "Player_2",
+							"sid": 292975894714053,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 752261946485574,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 977246127331796,
+							"parameters": {
+								"instance-variable": "Score",
+								"value": "Player_2.GemCount * GemScoreCount + Player_2.TreasureChestCount * TreasureChestScoreCount"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 795854459976021,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 559316295206286,
+							"parameters": {
+								"instance-variable": "TreasureChestCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 795861349564058,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 184502001135543
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 519142399130781,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player_2",
+							"sid": 794759525441255,
+							"parameters": {
+								"x": "Player_2_Boat.X",
+								"y": "Player_2_Boat.Y"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_2",
+							"sid": 905824143456614,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Player_2",
+							"sid": 662530102262552,
+							"parameters": {
+								"opacity": "0"
+							}
+						}
+					],
+					"sid": 936122789248746
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 512031127516602,
+							"parameters": {
+								"key": 70
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 592645442536123,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 948351136531506,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player_2",
+							"sid": 773822060868585,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player_2",
+							"sid": 830191703628495,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "350"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player_2",
+							"sid": 522442073897429,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "Player_2_Boat.Platform.VectorX"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_2",
+							"sid": 287618625732640,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_2",
+							"sid": 637513905827789,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "Player_2_Boat.Platform.Speed"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Player_2",
+							"sid": 415405320380783,
+							"parameters": {
+								"opacity": "100"
+							}
+						}
+					],
+					"sid": 284994488471236
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_2",
+							"sid": 880925906745630,
+							"parameters": {
+								"object": "Player_2_Boat"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 501546873830121,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 808111838524820,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 387797196006790
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 388814619329636,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 489967531197028,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_2_Boat",
+							"sid": 471040369364414,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2_Boat",
+							"sid": 655764532783241,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 315861989144648
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 410460663446780,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 765692915814802,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_2_Boat",
+							"sid": 868674706257056,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2_Boat",
+							"sid": 464562355955041,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 366827772747332
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 764584418908855,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-magnitude",
+							"objectClass": "Player_2_Boat",
+							"sid": 430115820555514,
+							"behaviorType": "Sine",
+							"parameters": {
+								"magnitude": "15 - (Player_2_Boat.Platform.Speed / 50)"
+							}
+						}
+					],
+					"sid": 237039194807221
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 295679973629860,
+							"parameters": {
+								"first-value": "Player_2_Boat.Platform.VectorX",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2_Boat",
+							"sid": 765744733530756,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 591006141310624
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 208594405182957,
+							"parameters": {
+								"first-value": "Player_2_Boat.Platform.VectorX",
+								"comparison": 2,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2_Boat",
+							"sid": 696389650978527,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 297729234055340
+				}
+			],
+			"sid": 326403271107519
 		},
 		{
 			"eventType": "group",
@@ -1126,7 +1787,7 @@
 							"objectClass": "Player_1",
 							"sid": 938034412581760,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							}
 						},
 						{
@@ -1197,7 +1858,7 @@
 							"objectClass": "Player_1",
 							"sid": 469023686078123,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							}
 						}
 					],
@@ -1240,7 +1901,7 @@
 							"objectClass": "Player_1",
 							"sid": 433103909583893,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							}
 						},
 						{
@@ -1293,7 +1954,7 @@
 							"objectClass": "Player_1",
 							"sid": 364414419930176,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							}
 						},
 						{
@@ -1356,7 +2017,7 @@
 							"objectClass": "Player_1",
 							"sid": 548182186308881,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							},
 							"isInverted": true
 						}
@@ -1610,7 +2271,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Player 1 movement2",
+			"title": "Player 2 movement",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -1620,9 +2281,9 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 601544835368707,
+							"sid": 358885475212698,
 							"parameters": {
-								"key": 37
+								"key": 65
 							}
 						}
 					],
@@ -1645,9 +2306,9 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 333117108498662,
+							"sid": 342117287501926,
 							"parameters": {
-								"key": 39
+								"key": 68
 							}
 						}
 					],
@@ -1847,9 +2508,9 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 757161156833185,
+							"sid": 457209518129806,
 							"parameters": {
-								"key": 38
+								"key": 87
 							}
 						},
 						{
@@ -1865,7 +2526,7 @@
 							"objectClass": "Player_2",
 							"sid": 477664250190090,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							}
 						},
 						{
@@ -1918,9 +2579,9 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 451527487624686,
+							"sid": 583307207615817,
 							"parameters": {
-								"key": 40
+								"key": 83
 							}
 						},
 						{
@@ -1936,7 +2597,7 @@
 							"objectClass": "Player_2",
 							"sid": 443976398106181,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							}
 						}
 					],
@@ -1979,7 +2640,7 @@
 							"objectClass": "Player_2",
 							"sid": 202988569494543,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							}
 						},
 						{
@@ -2032,7 +2693,7 @@
 							"objectClass": "Player_2",
 							"sid": 838836395934998,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							}
 						},
 						{
@@ -2095,7 +2756,7 @@
 							"objectClass": "Player_2",
 							"sid": 588727826413536,
 							"parameters": {
-								"object": "Water"
+								"object": "ForeWater"
 							},
 							"isInverted": true
 						}
@@ -2140,9 +2801,9 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 109554125070260,
+							"sid": 124356796915343,
 							"parameters": {
-								"key": 16
+								"key": 71
 							}
 						}
 					],
@@ -2165,9 +2826,9 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 288602179962346,
+							"sid": 631695196886324,
 							"parameters": {
-								"key": 16
+								"key": 71
 							},
 							"isInverted": true
 						}
@@ -2378,6 +3039,32 @@
 						}
 					],
 					"sid": 290507068765024
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 759350630664510,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Player_1_text",
+							"sid": 647642143723529,
+							"parameters": {
+								"text": "\"MPH: \" & round(Player_1_Boat.Platform.Speed / 20)"
+							}
+						}
+					],
+					"sid": 995669133046043
 				}
 			],
 			"sid": 107421894307549
@@ -2414,6 +3101,32 @@
 						}
 					],
 					"sid": 232540817822709
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 387581396964930,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text",
+							"sid": 415767716136891,
+							"parameters": {
+								"text": "\"MPH: \" & round(Player_2_Boat.Platform.Speed / 20)"
+							}
+						}
+					],
+					"sid": 415308847179809
 				}
 			],
 			"sid": 412521068612227
@@ -2421,7 +3134,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Collectibles",
+			"title": "Collectables",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -2488,63 +3201,6 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 190127048552367,
-							"parameters": {
-								"key": 81
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_2",
-							"sid": 580233122276635,
-							"parameters": {
-								"object": "Gem"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_2",
-							"sid": 275438674036708,
-							"parameters": {
-								"instance-variable": "CarryWeight",
-								"comparison": 3,
-								"value": "MaxWeight - GemWeight"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Gem",
-							"sid": 279678747018056
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_2",
-							"sid": 957474287628159,
-							"parameters": {
-								"instance-variable": "CarryWeight",
-								"value": "GemWeight"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_2",
-							"sid": 286425216094900,
-							"parameters": {
-								"instance-variable": "GemCount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 745818551782866
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
 							"sid": 694384670685494,
 							"parameters": {
 								"key": 32
@@ -2602,9 +3258,66 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 439003677481608,
+							"sid": 661354908772126,
 							"parameters": {
-								"key": 81
+								"key": 70
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_2",
+							"sid": 996528173042986,
+							"parameters": {
+								"object": "Gem"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 185307269356368,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 3,
+								"value": "MaxWeight - GemWeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Gem",
+							"sid": 116756561589243
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 734780688459850,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"value": "GemWeight"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 813973745571370,
+							"parameters": {
+								"instance-variable": "GemCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 439917422468141
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 877776661706001,
+							"parameters": {
+								"key": 70
 							}
 						},
 						{

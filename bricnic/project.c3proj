@@ -106,14 +106,12 @@
 			"Ground",
 			"Player_1",
 			"Keyboard",
-			"TiledBackground",
 			"DeepWater",
-			"TiledBackground4",
+			"Wall2",
 			"WaterSurface",
 			"Player_1_text",
 			"Player_1_Boat",
-			"TiledBackground2",
-			"TiledBackground3",
+			"Wall",
 			"TreasureChest",
 			"Gem",
 			"Barricade",
@@ -121,7 +119,11 @@
 			"Spark",
 			"rock_mask",
 			"Player_2",
-			"Player_2_text"
+			"Player_2_text",
+			"Player_2_Boat",
+			"TiledBackground",
+			"Horizon",
+			"DarkWaters"
 		],
 		"subfolders": []
 	},
@@ -130,12 +132,15 @@
 	"families": {
 		"items": [
 			"scrolling_objects",
-			"Backgrounds",
-			"Water",
+			"ForeWater",
 			"Players",
 			"Player1TextHUD",
 			"CollectableObjects",
-			"Sparks"
+			"Sparks",
+			"SolidBackground",
+			"DistantBackground",
+			"SemiDistantBackground",
+			"ForegroundWalls"
 		],
 		"subfolders": []
 	},

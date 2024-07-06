@@ -1,0 +1,13 @@
+{
+	"name": "ForegroundWalls",
+	"plugin-id": "TiledBg",
+	"sid": 558467651604006,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Ground",
+		"Wall2",
+		"Wall"
+	]
+}
