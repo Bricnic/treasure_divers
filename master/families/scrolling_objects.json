@@ -7,12 +7,13 @@
 	"effectTypes": [],
 	"members": [
 		"Player_1",
-		"Player_2",
 		"Background",
 		"Player_1_Boat",
 		"Gem",
 		"TreasureChest",
 		"Barricade",
-		"Spark"
+		"Spark",
+		"Player_2",
+		"Player_2_Boat"
 	]
 }

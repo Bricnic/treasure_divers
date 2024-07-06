@@ -1,0 +1,11 @@
+{
+	"name": "DistantBackground",
+	"plugin-id": "TiledBg",
+	"sid": 297887427492935,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Horizon"
+	]
+}

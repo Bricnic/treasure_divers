@@ -1,0 +1,13 @@
+{
+	"name": "SolidBackground",
+	"plugin-id": "TiledBg",
+	"sid": 741539861774628,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Wall2",
+		"Ground",
+		"Wall"
+	]
+}

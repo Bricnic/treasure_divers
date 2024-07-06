@@ -1,0 +1,11 @@
+{
+	"name": "SemiDistantBackground",
+	"plugin-id": "TiledBg",
+	"sid": 511305925554170,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"DarkWaters"
+	]
+}

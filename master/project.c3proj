@@ -82,6 +82,20 @@
 			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "hsladjust",
+			"name": "Adjust HSL",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "replacecolor",
+			"name": "Replace color",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "bvo3nrjvngw",
@@ -91,22 +105,25 @@
 			"Background",
 			"Ground",
 			"Player_1",
-			"Player_2",
 			"Keyboard",
-			"TiledBackground",
 			"DeepWater",
-			"TiledBackground4",
+			"Wall2",
 			"WaterSurface",
-			"Text",
+			"Player_1_text",
 			"Player_1_Boat",
-			"TiledBackground2",
-			"TiledBackground3",
+			"Wall",
 			"TreasureChest",
 			"Gem",
 			"Barricade",
 			"Audio",
 			"Spark",
-			"rock_mask"
+			"rock_mask",
+			"Player_2",
+			"Player_2_text",
+			"Player_2_Boat",
+			"TiledBackground",
+			"Horizon",
+			"DarkWaters"
 		],
 		"subfolders": []
 	},
@@ -115,12 +132,15 @@
 	"families": {
 		"items": [
 			"scrolling_objects",
-			"Backgrounds",
-			"Water",
+			"ForeWater",
 			"Players",
 			"Player1TextHUD",
 			"CollectableObjects",
-			"Sparks"
+			"Sparks",
+			"SolidBackground",
+			"DistantBackground",
+			"SemiDistantBackground",
+			"ForegroundWalls"
 		],
 		"subfolders": []
 	},
