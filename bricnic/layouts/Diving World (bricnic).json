@@ -174,10 +174,126 @@
 					}
 				},
 				{
+					"type": "Player_2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Side_move",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 22,
+					"instanceVariables": {
+						"InBoat": 0,
+						"TargetMaxSpeed": 450,
+						"Score": 0,
+						"CarryWeight": 0,
+						"GemCount": 0,
+						"TreasureChestCount": 0,
+						"IsDigging": false
+					},
+					"behaviors": {
+						"Platform": {
+							"properties": {
+								"max-speed": 300,
+								"acceleration": 500,
+								"deceleration": 700,
+								"jump-strength": 100,
+								"gravity": 0,
+								"max-fall-speed": 800,
+								"double-jump": false,
+								"jump-sustain": 400,
+								"default-controls": false,
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									0.6862745098039216,
+									0.5176470588235295,
+									0.4745098039215686,
+									1
+								],
+								"replace-color": [
+									0.8627450980392157,
+									0.2196078431372549,
+									0.2196078431372549,
+									1
+								],
+								"tolerance": 0.2
+							}
+						},
+						"ReplaceColor2": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									0.6196078431372549,
+									0.6,
+									0.6196078431372549,
+									1
+								],
+								"replace-color": [
+									0.7176470588235294,
+									0.2196078431372549,
+									0.6352941176470588,
+									1
+								],
+								"tolerance": 0.3
+							}
+						},
+						"ReplaceColor3": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									0.7490196078431373,
+									0.7372549019607844,
+									0.6901960784313725,
+									1
+								],
+								"replace-color": [
+									0.996078431372549,
+									0.8627450980392157,
+									0.984313725490196,
+									1
+								],
+								"tolerance": 0.2
+							}
+						},
+						"AdjustHSL": {
+							"isEnabled": true,
+							"parameters": {
+								"hue": -0.024800018310546543,
+								"saturation": 1.2,
+								"luminosity": 0.97839990234375
+							}
+						}
+					},
+					"world": {
+						"x": 2852,
+						"y": 1058,
+						"width": 158,
+						"height": 200,
+						"originX": 0.5632911392405063,
+						"originY": 0.325,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Player_1",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Idle",
+						"initial-animation": "Side_move",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -195,12 +311,12 @@
 					"behaviors": {
 						"Platform": {
 							"properties": {
-								"max-speed": 450,
-								"acceleration": 800,
-								"deceleration": 800,
-								"jump-strength": 500,
-								"gravity": 800,
-								"max-fall-speed": 200,
+								"max-speed": 300,
+								"acceleration": 500,
+								"deceleration": 700,
+								"jump-strength": 100,
+								"gravity": 0,
+								"max-fall-speed": 800,
 								"double-jump": false,
 								"jump-sustain": 400,
 								"default-controls": false,
@@ -209,60 +325,8 @@
 						}
 					},
 					"world": {
-						"x": 2597,
-						"y": 1086,
-						"width": 158,
-						"height": 200,
-						"originX": 0.5632911392405063,
-						"originY": 0.325,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Player_2",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 6,
-					"instanceVariables": {
-						"InBoat": 0,
-						"TargetMaxSpeed": 250,
-						"Score": 0,
-						"CarryWeight": 0,
-						"GemCount": 0,
-						"TreasureChestCount": 0,
-						"IsDigging": false
-					},
-					"behaviors": {
-						"Platform": {
-							"properties": {
-								"max-speed": 250,
-								"acceleration": 800,
-								"deceleration": 800,
-								"jump-strength": 350,
-								"gravity": 800,
-								"max-fall-speed": 200,
-								"double-jump": false,
-								"jump-sustain": 400,
-								"default-controls": false,
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 2293,
-						"y": 1082,
+						"x": 3094,
+						"y": 1057,
 						"width": 158,
 						"height": 200,
 						"originX": 0.5632911392405063,
@@ -677,8 +741,8 @@
 						}
 					},
 					"world": {
-						"x": 3487,
-						"y": 1059,
+						"x": 3709,
+						"y": 1068,
 						"width": 643.1578947368421,
 						"height": 216.7927927927928,
 						"originX": 0.4967266775777414,
@@ -694,7 +758,7 @@
 					}
 				},
 				{
-					"type": "Text",
+					"type": "Player_1_text",
 					"properties": {
 						"text": "Player 1 HUD",
 						"enable-bbcode": true,
@@ -806,17 +870,62 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1762,
-						"y": 1508,
+						"x": 1756,
+						"y": 1512,
 						"width": 414,
-						"height": 329,
+						"height": 210,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.3976190476190476,
 						"color": [
 							1,
 							1,
 							1,
 							0.25
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Player_2_text",
+					"properties": {
+						"text": "Player 2 HUD",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 30,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 6,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 855,
+						"y": 353,
+						"width": 1045,
+						"height": 233,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
 						],
 						"angle": 0,
 						"zElevation": 0
