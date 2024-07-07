@@ -123,7 +123,8 @@
 			"Player_2_Boat",
 			"TiledBackground",
 			"Horizon",
-			"DarkWaters"
+			"DarkWaters",
+			"Sprite"
 		],
 		"subfolders": []
 	},

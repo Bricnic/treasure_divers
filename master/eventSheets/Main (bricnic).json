@@ -139,20 +139,39 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 963640921236838
+						}
+					],
 					"actions": [
 						{
 							"id": "clear-canvas",
 							"objectClass": "DrawingCanvas",
-							"sid": 482822974862501,
+							"sid": 256000862044327,
 							"parameters": {
 								"color": "rgba(0, 0, 0, 0)"
 							}
-						},
+						}
+					],
+					"sid": 645023198834741
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 366342584596669
+						}
+					],
+					"actions": [
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 336328862123962,
+							"sid": 430996249803433,
 							"parameters": {
 								"variable": "dX",
 								"value": "Player_1.X-Player_2.X"
@@ -161,43 +180,38 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 994761182459419,
+							"sid": 495511701379441,
 							"parameters": {
 								"variable": "dY",
 								"value": "Player_1.Y-Player_2.Y"
 							}
-						},
+						}
+					],
+					"sid": 815783907308533
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 432587899497604
+						}
+					],
+					"actions": [
 						{
 							"id": "set-position",
-							"objectClass": "Player1TextHUD",
-							"sid": 742689841299617,
+							"objectClass": "DistantBackground",
+							"sid": 847579807497777,
 							"parameters": {
-								"x": "Player_1.X - 380 - dX + (ViewportWidth(\"Canvas\") / 2)",
-								"y": "Player_1.Y - 530 - dY"
+								"x": "Self.X - (dX / 10 ) + (ViewportWidth(\"Canvas\") / 20)",
+								"y": "Self.Y - (dY)"
 							}
 						},
 						{
 							"id": "set-position",
-							"objectClass": "ForegroundWalls",
-							"sid": 672409048737970,
-							"parameters": {
-								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
-								"y": "Self.Y - dY"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "Sparks",
-							"sid": 296951898171960,
-							"parameters": {
-								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
-								"y": "Self.Y - dY"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "ForeWater",
-							"sid": 571961453530609,
+							"objectClass": "SemiDistantBackground",
+							"sid": 305442794579388,
 							"parameters": {
 								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y - dY"
@@ -206,7 +220,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "scrolling_objects",
-							"sid": 154518035427146,
+							"sid": 350540229390134,
 							"parameters": {
 								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y - dY"
@@ -214,8 +228,8 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "SemiDistantBackground",
-							"sid": 909142644265753,
+							"objectClass": "ForeWater",
+							"sid": 956520505073848,
 							"parameters": {
 								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y - dY"
@@ -223,17 +237,48 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "DistantBackground",
-							"sid": 372994555123812,
+							"objectClass": "ForegroundWalls",
+							"sid": 785103177415639,
 							"parameters": {
-								"x": "Self.X - (dX / 10 ) + (ViewportWidth(\"Canvas\") / 20)",
-								"y": "Self.Y - (dY)"
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
 							}
 						},
+						{
+							"id": "set-position",
+							"objectClass": "Sparks",
+							"sid": 122911569288955,
+							"parameters": {
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_1_text",
+							"sid": 355660945783825,
+							"parameters": {
+								"x": "Player_1.X - 1080 + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Player_1.Y - 520"
+							}
+						}
+					],
+					"sid": 971633496902458
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 277743358135854
+						}
+					],
+					"actions": [
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 649768862770574,
+							"sid": 456540728003099,
 							"parameters": {
 								"object": "DistantBackground",
 								"effects": "with-effects"
@@ -242,7 +287,7 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 572680167235084,
+							"sid": 581746068471756,
 							"parameters": {
 								"object": "SemiDistantBackground",
 								"effects": "with-effects"
@@ -251,7 +296,7 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 413107520512627,
+							"sid": 543094871401525,
 							"parameters": {
 								"object": "scrolling_objects",
 								"effects": "with-effects"
@@ -260,7 +305,7 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 422715813928785,
+							"sid": 988659861728283,
 							"parameters": {
 								"object": "ForeWater",
 								"effects": "with-effects"
@@ -269,16 +314,7 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 427946754752240,
-							"parameters": {
-								"object": "Sparks",
-								"effects": "with-effects"
-							}
-						},
-						{
-							"id": "paste-object",
-							"objectClass": "DrawingCanvas",
-							"sid": 237645042893281,
+							"sid": 563249734465283,
 							"parameters": {
 								"object": "ForegroundWalls",
 								"effects": "with-effects"
@@ -287,16 +323,25 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 595650774892778,
+							"sid": 622613535127428,
 							"parameters": {
-								"object": "Player1TextHUD",
+								"object": "Sparks",
+								"effects": "with-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 245259123868330,
+							"parameters": {
+								"object": "Player_1_text",
 								"effects": "with-effects"
 							}
 						},
 						{
 							"id": "set-position",
 							"objectClass": "ForegroundWalls",
-							"sid": 216910164480611,
+							"sid": 934677408438066,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y + dY"
@@ -305,7 +350,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "Sparks",
-							"sid": 284978032510951,
+							"sid": 788384328365021,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y + dY"
@@ -314,7 +359,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "scrolling_objects",
-							"sid": 942575529413594,
+							"sid": 510424461424536,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y + dY"
@@ -323,7 +368,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "ForeWater",
-							"sid": 526974032670148,
+							"sid": 620531454823645,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y + dY"
@@ -332,7 +377,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "SemiDistantBackground",
-							"sid": 849282228059613,
+							"sid": 511552378591412,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y + dY"
@@ -341,7 +386,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "DistantBackground",
-							"sid": 148287994799049,
+							"sid": 108127168594338,
 							"parameters": {
 								"x": "Self.X + (dX / 10) - (ViewportWidth(\"Canvas\") / 20)",
 								"y": "Self.Y + (dY)"
@@ -350,7 +395,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "Player1TextHUD",
-							"sid": 507517231222864,
+							"sid": 459955260498614,
 							"parameters": {
 								"x": "-100",
 								"y": "-100"
@@ -359,7 +404,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "Player_2_text",
-							"sid": 244874272523808,
+							"sid": 213963150419151,
 							"parameters": {
 								"x": "Player_2.X - 380",
 								"y": "Player_2.Y - 580"
@@ -368,7 +413,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "DrawingCanvas",
-							"sid": 325418438713801,
+							"sid": 247889254193008,
 							"parameters": {
 								"x": "Player_2.X + ViewportWidth(\"Canvas\") / 2",
 								"y": "Player_2.Y"
@@ -377,14 +422,14 @@
 						{
 							"id": "scroll-to-position",
 							"objectClass": "System",
-							"sid": 879453690002422,
+							"sid": 366110149568416,
 							"parameters": {
 								"x": "Player_2.X + ViewportWidth(\"Canvas\") / 4",
 								"y": "Player_2.Y"
 							}
 						}
 					],
-					"sid": 971633496902458
+					"sid": 215458981866942
 				}
 			],
 			"sid": 856862830467655
@@ -3397,13 +3442,13 @@
 							"isInverted": true
 						},
 						{
-							"id": "compare-speed",
-							"objectClass": "Player_1",
-							"sid": 318697443427436,
-							"behaviorType": "Platform",
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 922818488386612,
 							"parameters": {
-								"comparison": 3,
-								"speed": "150"
+								"first-value": "abs(Player_1.Platform.VectorX)",
+								"comparison": 2,
+								"second-value": "25"
 							}
 						}
 					],
@@ -3432,13 +3477,13 @@
 							}
 						},
 						{
-							"id": "compare-speed",
-							"objectClass": "Player_1",
-							"sid": 185169975479714,
-							"behaviorType": "Platform",
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 436506562697199,
 							"parameters": {
-								"comparison": 3,
-								"speed": "150"
+								"first-value": "abs(Player_1.Platform.VectorX)",
+								"comparison": 2,
+								"second-value": "25"
 							}
 						},
 						{
@@ -3462,10 +3507,10 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Player_1",
-							"sid": 568205114509957,
+							"sid": 234434333572368,
 							"parameters": {
 								"object": "Spark",
-								"layer": "0",
+								"layer": "\"Canvas\"",
 								"image-point": "\"Blowtorch\"",
 								"create-hierarchy": false,
 								"template-name": "\"\""
@@ -3538,13 +3583,13 @@
 							"isInverted": true
 						},
 						{
-							"id": "compare-speed",
-							"objectClass": "Player_2",
-							"sid": 590428298401787,
-							"behaviorType": "Platform",
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 334885844694218,
 							"parameters": {
-								"comparison": 3,
-								"speed": "150"
+								"first-value": "abs(Player_2.Platform.VectorX)",
+								"comparison": 2,
+								"second-value": "25"
 							}
 						}
 					],
@@ -3573,21 +3618,11 @@
 							}
 						},
 						{
-							"id": "compare-speed",
-							"objectClass": "Player_2",
-							"sid": 471490064431405,
-							"behaviorType": "Platform",
-							"parameters": {
-								"comparison": 3,
-								"speed": "150"
-							}
-						},
-						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 830993724070562,
+							"sid": 489331329180719,
 							"parameters": {
-								"key": 69
+								"key": 71
 							}
 						},
 						{
@@ -3597,16 +3632,26 @@
 							"parameters": {
 								"interval-seconds": "0.05"
 							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 653888363045010,
+							"parameters": {
+								"first-value": "abs(Player_2.Platform.VectorX)",
+								"comparison": 2,
+								"second-value": "25"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Player_2",
-							"sid": 496931732546073,
+							"sid": 961483565980810,
 							"parameters": {
 								"object": "Spark",
-								"layer": "0",
+								"layer": "\"Canvas\"",
 								"image-point": "\"Blowtorch\"",
 								"create-hierarchy": false,
 								"template-name": "\"\""
@@ -3824,102 +3869,6 @@
 							"id": "destroy",
 							"objectClass": "Barricade",
 							"sid": 106051920618857
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_1",
-							"sid": 848178903140353,
-							"parameters": {
-								"object": "Spark",
-								"layer": "0",
-								"image-point": "\"Blowtorch\"",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_1",
-							"sid": 209370560858395,
-							"parameters": {
-								"object": "Spark",
-								"layer": "0",
-								"image-point": "\"Blowtorch\"",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_1",
-							"sid": 633588242701138,
-							"parameters": {
-								"object": "Spark",
-								"layer": "0",
-								"image-point": "\"Blowtorch\"",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_1",
-							"sid": 863421625910469,
-							"parameters": {
-								"object": "Spark",
-								"layer": "0",
-								"image-point": "\"Blowtorch\"",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_1",
-							"sid": 997443333018321,
-							"parameters": {
-								"object": "Spark",
-								"layer": "0",
-								"image-point": "\"Blowtorch\"",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_1",
-							"sid": 666672831718368,
-							"parameters": {
-								"object": "Spark",
-								"layer": "0",
-								"image-point": "\"Blowtorch\"",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_1",
-							"sid": 262248290719586,
-							"parameters": {
-								"object": "Spark",
-								"layer": "0",
-								"image-point": "\"Blowtorch\"",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_1",
-							"sid": 340326580841646,
-							"parameters": {
-								"object": "Spark",
-								"layer": "0",
-								"image-point": "\"Blowtorch\"",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
 						}
 					],
 					"sid": 704858290771427
