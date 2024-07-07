@@ -6,8 +6,8 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"Wall2",
 		"Ground",
-		"Wall"
+		"AlternativeGround",
+		"black"
 	]
 }

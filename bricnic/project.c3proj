@@ -107,11 +107,9 @@
 			"Player_1",
 			"Keyboard",
 			"DeepWater",
-			"Wall2",
 			"WaterSurface",
 			"Player_1_text",
 			"Player_1_Boat",
-			"Wall",
 			"TreasureChest",
 			"Gem",
 			"Barricade",
@@ -125,7 +123,9 @@
 			"Horizon",
 			"DarkWaters",
 			"Sprite",
-			"Player_2_debug"
+			"Player_2_debug",
+			"AlternativeGround",
+			"black"
 		],
 		"subfolders": []
 	},

@@ -264,6 +264,15 @@
 						},
 						{
 							"id": "set-position",
+							"objectClass": "CollectableObjects",
+							"sid": 881325098398816,
+							"parameters": {
+								"x": "Self.X - dX + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y - dY"
+							}
+						},
+						{
+							"id": "set-position",
 							"objectClass": "ForeWater",
 							"sid": 956520505073848,
 							"parameters": {
@@ -332,7 +341,16 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 209965912090077,
+							"sid": 342712754279620,
+							"parameters": {
+								"object": "CollectableObjects",
+								"effects": "without-effects"
+							}
+						},
+						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 780111065102370,
 							"parameters": {
 								"object": "scrolling_objects",
 								"effects": "without-effects"
@@ -341,18 +359,18 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 988659861728283,
+							"sid": 563249734465283,
 							"parameters": {
-								"object": "ForeWater",
+								"object": "ForegroundWalls",
 								"effects": "with-effects"
 							}
 						},
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 563249734465283,
+							"sid": 395169849944993,
 							"parameters": {
-								"object": "ForegroundWalls",
+								"object": "ForeWater",
 								"effects": "with-effects"
 							}
 						},
@@ -394,8 +412,17 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "scrolling_objects",
+							"objectClass": "CollectableObjects",
 							"sid": 510424461424536,
+							"parameters": {
+								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Self.Y + dY"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "scrolling_objects",
+							"sid": 544419226052768,
 							"parameters": {
 								"x": "Self.X + dX - (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Self.Y + dY"

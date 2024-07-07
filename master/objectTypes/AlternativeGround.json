@@ -1,20 +1,26 @@
 {
-	"name": "Wall2",
+	"name": "AlternativeGround",
 	"plugin-id": "TiledBg",
-	"sid": 969223022934038,
+	"sid": 361043782247790,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 808015104014386
+		}
+	],
 	"effectTypes": [],
 	"image": {
-		"width": 250,
-		"height": 250,
+		"width": 169,
+		"height": 106,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 9009569,
+		"imageSpriteId": 9189396,
 		"useCollisionPoly": true,
 		"tag": ""
 	}
