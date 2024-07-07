@@ -124,7 +124,8 @@
 			"TiledBackground",
 			"Horizon",
 			"DarkWaters",
-			"Sprite"
+			"Sprite",
+			"Player_2_debug"
 		],
 		"subfolders": []
 	},

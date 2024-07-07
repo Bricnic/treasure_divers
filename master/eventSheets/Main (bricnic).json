@@ -3,6 +3,16 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "DebugText",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 328934660471266
+		},
+		{
+			"eventType": "variable",
 			"name": "dY",
 			"type": "number",
 			"initialValue": "0",
@@ -154,6 +164,32 @@
 							"parameters": {
 								"color": "rgba(0, 0, 0, 0)"
 							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "DrawingCanvas",
+							"sid": 531981099604630,
+							"parameters": {
+								"width": "800",
+								"height": "1400"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 365634256315828,
+							"parameters": {
+								"variable": "DebugText",
+								"value": "(ViewportWidth(\"Canvas\") / 2) & \", \" & round(dX) & \", \" & round(dY) & \", \" & DrawingCanvas.SurfaceDeviceHeight"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_debug",
+							"sid": 371478122909648,
+							"parameters": {
+								"text": "DebugText"
+							}
 						}
 					],
 					"sid": 645023198834741
@@ -256,10 +292,10 @@
 						{
 							"id": "set-position",
 							"objectClass": "Player_1_text",
-							"sid": 355660945783825,
+							"sid": 965402669184295,
 							"parameters": {
-								"x": "Player_1.X - 1080 + (ViewportWidth(\"Canvas\") / 2)",
-								"y": "Player_1.Y - 520"
+								"x": "Player_1.X - 1120 + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Player_1.Y - 540"
 							}
 						}
 					],
@@ -296,10 +332,10 @@
 						{
 							"id": "paste-object",
 							"objectClass": "DrawingCanvas",
-							"sid": 543094871401525,
+							"sid": 209965912090077,
 							"parameters": {
 								"object": "scrolling_objects",
-								"effects": "with-effects"
+								"effects": "without-effects"
 							}
 						},
 						{
@@ -404,10 +440,19 @@
 						{
 							"id": "set-position",
 							"objectClass": "Player_2_text",
-							"sid": 213963150419151,
+							"sid": 351386621824322,
 							"parameters": {
-								"x": "Player_2.X - 380",
-								"y": "Player_2.Y - 580"
+								"x": "Player_2.X - 350",
+								"y": "Player_2.Y - 540"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_2_debug",
+							"sid": 229361725404543,
+							"parameters": {
+								"x": "Player_2.X - 350",
+								"y": "Player_2.Y - 440"
 							}
 						},
 						{
@@ -422,7 +467,7 @@
 						{
 							"id": "scroll-to-position",
 							"objectClass": "System",
-							"sid": 366110149568416,
+							"sid": 743798440590937,
 							"parameters": {
 								"x": "Player_2.X + ViewportWidth(\"Canvas\") / 4",
 								"y": "Player_2.Y"
