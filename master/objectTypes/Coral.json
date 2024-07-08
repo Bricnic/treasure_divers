@@ -1,0 +1,67 @@
+{
+	"name": "Coral",
+	"plugin-id": "Sprite",
+	"sid": 842160146173955,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 187593301957983
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 65,
+						"height": 71,
+						"originX": 0.4461538461538462,
+						"originY": 0.4084507042253521,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7138032,
+						"collisionPoly": {
+							"points": [
+								0.05230783315805293,
+								0.14084512415066575,
+								0.43538466233473583,
+								0.043661923475668545,
+								0.5476921668419472,
+								0.41690138695945217,
+								0.9969231238731971,
+								0.7323943661971836,
+								0.756923147348257,
+								0.959155015542473,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "damage point",
+								"x": 0.3230769230769231,
+								"y": 0.3380281690140845
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 375523252900943,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

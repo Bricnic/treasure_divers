@@ -78,6 +78,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -127,7 +134,9 @@
 			"AlternativeGround",
 			"black",
 			"PassableGround",
-			"BlockingGround2"
+			"BlockingGround2",
+			"Coral",
+			"Blood"
 		],
 		"subfolders": []
 	},

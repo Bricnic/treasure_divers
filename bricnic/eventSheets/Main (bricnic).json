@@ -3487,6 +3487,28 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 979153064475668
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Barricade",
+							"sid": 921775297755499,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "(Barricade.Width * Barricade.Height) / 200"
+							}
+						}
+					],
+					"sid": 280546965688794
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_1",
 							"sid": 448951774854274,
@@ -3848,11 +3870,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Barricade",
-							"sid": 289660616284603,
+							"sid": 948573474252204,
 							"parameters": {
 								"instance-variable": "Health",
 								"comparison": 3,
-								"value": "200"
+								"value": "(Barricade.Width / 3) * 2"
 							}
 						}
 					],
@@ -3874,11 +3896,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Barricade",
-							"sid": 988514704149130,
+							"sid": 696665684537682,
 							"parameters": {
 								"instance-variable": "Health",
 								"comparison": 3,
-								"value": "100"
+								"value": "(Barricade.Width / 3) * 1"
 							}
 						}
 					],
@@ -3976,6 +3998,103 @@
 				}
 			],
 			"sid": 211603133382418
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Coral",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_1",
+							"sid": 286518547337769,
+							"parameters": {
+								"object": "Coral"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 573949624654726,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 186514570936249,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 792874800500106,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "1000",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 940160312743406,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "1000",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 209097964748844,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "1000",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 663160737389621
+				}
+			],
+			"sid": 745499023155064
 		}
 	],
 	"sid": 390088743331416
