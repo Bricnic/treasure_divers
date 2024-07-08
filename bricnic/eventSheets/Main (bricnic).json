@@ -4475,6 +4475,14 @@
 							"parameters": {
 								"text": "\"  Health: \" & round(Player_1.Health)"
 							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "Player_1_text",
+							"sid": 368820386471532,
+							"parameters": {
+								"text": "\"  Score: \" & round(Player_1.Score)"
+							}
 						}
 					],
 					"sid": 766389654111109
@@ -4562,6 +4570,14 @@
 							"sid": 865947315955516,
 							"parameters": {
 								"text": "\"  Health: \" & round(Player_2.Health)"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "Player_2_text",
+							"sid": 261107398585946,
+							"parameters": {
+								"text": "\"  Score: \" & round(Player_2.Score)"
 							}
 						}
 					],
