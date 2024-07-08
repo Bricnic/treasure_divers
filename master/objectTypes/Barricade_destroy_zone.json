@@ -1,7 +1,7 @@
 {
-	"name": "Sprite",
+	"name": "Barricade_destroy_zone",
 	"plugin-id": "Sprite",
-	"sid": 644987741824755,
+	"sid": 687011848476083,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,20 +11,20 @@
 			{
 				"frames": [
 					{
-						"width": 2560,
-						"height": 1500,
+						"width": 414,
+						"height": 210,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.3976190476190476,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9045184,
+						"imageSpriteId": 8557606,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 988263509033462,
+				"sid": 432968902913189,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

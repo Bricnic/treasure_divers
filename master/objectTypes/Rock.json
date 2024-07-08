@@ -1,30 +1,36 @@
 {
-	"name": "rock_mask",
+	"name": "Rock",
 	"plugin-id": "Sprite",
-	"sid": 687011848476083,
+	"sid": 170067766037466,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 161795621034446
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 414,
-						"height": 210,
-						"originX": 0.5,
-						"originY": 0.3976190476190476,
+						"width": 71,
+						"height": 62,
+						"originX": 0.49295774647887325,
+						"originY": 0.532258064516129,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8557606,
+						"imageSpriteId": 7816444,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 432968902913189,
+				"sid": 200198686998353,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

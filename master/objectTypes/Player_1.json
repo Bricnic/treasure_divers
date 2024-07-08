@@ -45,6 +45,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 987384712739751
+		},
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 972596960211313
 		}
 	],
 	"behaviorTypes": [

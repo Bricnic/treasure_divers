@@ -1,0 +1,12 @@
+{
+	"name": "Particles",
+	"plugin-id": "Particles",
+	"sid": 368532724471332,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Bleeding",
+		"Bleeding2"
+	]
+}

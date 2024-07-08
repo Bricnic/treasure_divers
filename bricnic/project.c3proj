@@ -29,6 +29,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -136,7 +143,10 @@
 			"BlockingGround2",
 			"Coral",
 			"Blood",
-			"Rock"
+			"Rock",
+			"Bleeding",
+			"Bleeding2",
+			"BlowParticles"
 		],
 		"subfolders": []
 	},
@@ -153,7 +163,8 @@
 			"SolidBackground",
 			"DistantBackground",
 			"SemiDistantBackground",
-			"ForegroundWalls"
+			"ForegroundWalls",
+			"Particles"
 		],
 		"subfolders": []
 	},
