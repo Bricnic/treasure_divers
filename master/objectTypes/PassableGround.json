@@ -1,26 +1,26 @@
 {
-	"name": "Ground",
+	"name": "PassableGround",
 	"plugin-id": "TiledBg",
-	"sid": 744079120557792,
+	"sid": 383984287016517,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
-			"sid": 643725325427990
+			"sid": 925916728552532
 		}
 	],
 	"effectTypes": [],
 	"image": {
 		"width": 83,
-		"height": 719,
+		"height": 743,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 4129047,
+		"imageSpriteId": 2824081,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

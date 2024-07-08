@@ -45,13 +45,6 @@
 			"desc": "",
 			"show": true,
 			"sid": 543616469352514
-		},
-		{
-			"name": "IsDigging",
-			"type": "boolean",
-			"desc": "",
-			"show": true,
-			"sid": 257652183347995
 		}
 	],
 	"behaviorTypes": [

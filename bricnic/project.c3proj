@@ -125,7 +125,9 @@
 			"Sprite",
 			"Player_2_debug",
 			"AlternativeGround",
-			"black"
+			"black",
+			"PassableGround",
+			"BlockingGround2"
 		],
 		"subfolders": []
 	},

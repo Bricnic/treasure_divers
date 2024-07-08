@@ -8,6 +8,8 @@
 	"members": [
 		"Ground",
 		"AlternativeGround",
-		"black"
+		"black",
+		"PassableGround",
+		"BlockingGround2"
 	]
 }

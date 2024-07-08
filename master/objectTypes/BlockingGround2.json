@@ -1,26 +1,26 @@
 {
-	"name": "Ground",
+	"name": "BlockingGround2",
 	"plugin-id": "TiledBg",
-	"sid": 744079120557792,
+	"sid": 232024907627083,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
-			"sid": 643725325427990
+			"sid": 379006871454802
 		}
 	],
 	"effectTypes": [],
 	"image": {
 		"width": 83,
-		"height": 719,
+		"height": 743,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 4129047,
+		"imageSpriteId": 2033873,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

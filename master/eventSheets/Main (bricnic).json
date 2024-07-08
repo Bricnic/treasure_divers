@@ -45,7 +45,7 @@
 			"eventType": "variable",
 			"name": "TreasureChestWeight",
 			"type": "number",
-			"initialValue": "10",
+			"initialValue": "15",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "MaxWeight",
 			"type": "number",
-			"initialValue": "12",
+			"initialValue": "15",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -65,7 +65,7 @@
 			"eventType": "variable",
 			"name": "GemScoreCount",
 			"type": "number",
-			"initialValue": "100",
+			"initialValue": "150",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -75,21 +75,11 @@
 			"eventType": "variable",
 			"name": "TreasureChestScoreCount",
 			"type": "number",
-			"initialValue": "500",
+			"initialValue": "800",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 805053406811050
-		},
-		{
-			"eventType": "variable",
-			"name": "DigTimeSecs",
-			"type": "number",
-			"initialValue": "2",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 609372388525235
 		},
 		{
 			"eventType": "variable",
@@ -549,9 +539,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "Player_1",
-							"sid": 602997020224597,
+							"sid": 509662494899390,
 							"parameters": {
-								"x": "Player_1.X - ceil((Player_1.X - Player_1_Boat.X) * 0.01)"
+								"x": "Player_1.X - ceil((Player_1.X - Player_1_Boat.X) * 0.05)"
 							}
 						},
 						{
@@ -601,9 +591,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "Player_1",
-							"sid": 320953025191244,
+							"sid": 535163475811426,
 							"parameters": {
-								"x": "Player_1.X + ceil((Player_1_Boat.X - Player_1.X) * 0.01)"
+								"x": "Player_1.X + ceil((Player_1_Boat.X - Player_1.X) * 0.05)"
 							}
 						},
 						{
@@ -676,11 +666,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 969578590862754,
+							"sid": 363824479884222,
 							"parameters": {
 								"first-value": "abs(Player_1.X - Player_1_Boat.X) + abs(Player_1.Y - Player_1_Boat.Y)",
 								"comparison": 2,
-								"second-value": "2"
+								"second-value": "6"
 							}
 						}
 					],
@@ -1119,9 +1109,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "Player_2",
-							"sid": 733397436346316,
+							"sid": 614059271193291,
 							"parameters": {
-								"x": "Player_2.X - ceil((Player_2.X - Player_2_Boat.X) * 0.01)"
+								"x": "Player_2.X - ceil((Player_2.X - Player_2_Boat.X) * 0.05)"
 							}
 						},
 						{
@@ -1171,9 +1161,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "Player_2",
-							"sid": 300116890546344,
+							"sid": 781239275340269,
 							"parameters": {
-								"x": "Player_2.X + ceil((Player_2_Boat.X - Player_2.X) * 0.01)"
+								"x": "Player_2.X + ceil((Player_2_Boat.X - Player_2.X) * 0.05)"
 							}
 						},
 						{
@@ -1246,11 +1236,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 702856955629399,
+							"sid": 358985553159244,
 							"parameters": {
 								"first-value": "abs(Player_2.X - Player_2_Boat.X) + abs(Player_2.Y - Player_2_Boat.Y)",
 								"comparison": 2,
-								"second-value": "2"
+								"second-value": "6"
 							}
 						}
 					],
@@ -3587,15 +3577,6 @@
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Player_1",
-							"sid": 315133364065518,
-							"parameters": {
-								"instance-variable": "IsDigging",
-								"value": "true"
-							}
 						}
 					],
 					"sid": 514062968519010
@@ -3727,15 +3708,6 @@
 								"image-point": "\"Blowtorch\"",
 								"create-hierarchy": false,
 								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Player_2",
-							"sid": 737033753471499,
-							"parameters": {
-								"instance-variable": "IsDigging",
-								"value": "true"
 							}
 						}
 					],
