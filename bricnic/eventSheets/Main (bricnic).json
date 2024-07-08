@@ -3031,6 +3031,16 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_1",
+							"sid": 653091376689237,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
 							"sid": 733334076631275,
 							"parameters": {
 								"instance-variable": "UpHeld",
@@ -3091,6 +3101,16 @@
 				{
 					"eventType": "block",
 					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 318783569741697,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						},
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_1",
@@ -3847,6 +3867,16 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 217681106004636,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
 							"sid": 720917011509686,
 							"parameters": {
@@ -3908,6 +3938,16 @@
 				{
 					"eventType": "block",
 					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 563883992900057,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						},
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
