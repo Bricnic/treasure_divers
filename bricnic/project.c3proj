@@ -29,13 +29,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Particles",
-			"name": "Particles",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -96,20 +89,6 @@
 			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
-		},
-		{
-			"type": "effect",
-			"id": "hsladjust",
-			"name": "Adjust HSL",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "effect",
-			"id": "replacecolor",
-			"name": "Replace color",
-			"author": "Scirra",
-			"bundled": false
 		}
 	],
 	"uniqueId": "bvo3nrjvngw",
@@ -143,10 +122,7 @@
 			"BlockingGround2",
 			"Coral",
 			"Blood",
-			"Rock",
-			"Bleeding",
-			"Bleeding2",
-			"BlowParticles"
+			"Rock"
 		],
 		"subfolders": []
 	},
@@ -163,8 +139,7 @@
 			"SolidBackground",
 			"DistantBackground",
 			"SemiDistantBackground",
-			"ForegroundWalls",
-			"Particles"
+			"ForegroundWalls"
 		],
 		"subfolders": []
 	},
