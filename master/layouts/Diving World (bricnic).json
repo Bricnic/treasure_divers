@@ -849,64 +849,6 @@
 					}
 				},
 				{
-					"type": "Player_2_Boat",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 25,
-					"instanceVariables": {},
-					"behaviors": {
-						"Sine": {
-							"properties": {
-								"movement": "vertical",
-								"wave": "sine",
-								"period": 5,
-								"period-random": 2,
-								"period-offset": 0,
-								"period-offset-random": 3,
-								"magnitude": 15,
-								"magnitude-random": 2,
-								"enabled": true,
-								"live-preview": false
-							}
-						},
-						"Platform": {
-							"properties": {
-								"max-speed": 1000,
-								"acceleration": 500,
-								"deceleration": 300,
-								"jump-strength": 0,
-								"gravity": 0,
-								"max-fall-speed": 0,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 4085,
-						"y": 990,
-						"width": 643.1578947368421,
-						"height": 216.7927927927928,
-						"originX": 0.4967266775777414,
-						"originY": 0.4787234042553192,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Player_1_Boat",
 					"properties": {
 						"initially-visible": true,
@@ -1087,6 +1029,64 @@
 						"height": 200,
 						"originX": 0.5632911392405063,
 						"originY": 0.325,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Player_2_Boat",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 25,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 5,
+								"period-random": 2,
+								"period-offset": 0,
+								"period-offset-random": 3,
+								"magnitude": 15,
+								"magnitude-random": 2,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Platform": {
+							"properties": {
+								"max-speed": 1000,
+								"acceleration": 500,
+								"deceleration": 300,
+								"jump-strength": 0,
+								"gravity": 0,
+								"max-fall-speed": 0,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 4085,
+						"y": 990,
+						"width": 643.1578947368421,
+						"height": 216.7927927927928,
+						"originX": 0.4967266775777414,
+						"originY": 0.4787234042553192,
 						"color": [
 							1,
 							1,
