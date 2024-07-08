@@ -6,6 +6,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"Player_1_text"
+		"Player_1_text",
+		"Player_1_text2"
 	]
 }

@@ -83,9 +83,29 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "BarricadeProximityCheck",
+			"name": "BaseXAccel",
 			"type": "number",
-			"initialValue": "200",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 705781040657307
+		},
+		{
+			"eventType": "variable",
+			"name": "BaseYAccel",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 989724352795588
+		},
+		{
+			"eventType": "variable",
+			"name": "HealthFactor",
+			"type": "number",
+			"initialValue": "2",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -120,6 +140,14 @@
 							"id": "set-mirrored",
 							"objectClass": "Player_2",
 							"sid": 719566908405275,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player_2_Boat",
+							"sid": 363302420594141,
 							"parameters": {
 								"state": "mirrored"
 							}
@@ -296,6 +324,15 @@
 								"x": "Player_1.X - 1120 + (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Player_1.Y - 540"
 							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_1_text2",
+							"sid": 426313863965754,
+							"parameters": {
+								"x": "Player_1.X - 1120 + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Player_1.Y - 490"
+							}
 						}
 					],
 					"sid": 971633496902458
@@ -383,6 +420,15 @@
 							}
 						},
 						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 108604067201461,
+							"parameters": {
+								"object": "Player_1_text2",
+								"effects": "with-effects"
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "ForegroundWalls",
 							"sid": 934677408438066,
@@ -465,11 +511,21 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "Player_2_debug",
-							"sid": 229361725404543,
+							"objectClass": "Player_2_text2",
+							"sid": 970730470182304,
 							"parameters": {
 								"x": "Player_2.X - 350",
-								"y": "Player_2.Y - 440"
+								"y": "Player_2.Y - 490"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_2_debug",
+							"sid": 606113365533912,
+							"disabled": true,
+							"parameters": {
+								"x": "Player_2.X - 350",
+								"y": "Player_2.Y - 340"
 							}
 						},
 						{
@@ -495,6 +551,1090 @@
 				}
 			],
 			"sid": 856862830467655
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Key mappings",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 736881468648346,
+							"parameters": {
+								"key": 38
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 309077756808541,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 223241253335881
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 843622995373036,
+							"parameters": {
+								"key": 39
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 190767439534688,
+							"parameters": {
+								"instance-variable": "RightHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 980564660381916
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 290539957705020,
+							"parameters": {
+								"key": 40
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 698945678703019,
+							"parameters": {
+								"instance-variable": "DownHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 189844993074647
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 244680618348700,
+							"parameters": {
+								"key": 37
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 566790420216596,
+							"parameters": {
+								"instance-variable": "LeftHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 148064977715182
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 320739958062079,
+							"parameters": {
+								"key": 16
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 480054010889396,
+							"parameters": {
+								"instance-variable": "SprintHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 292095674826410
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 336656182463577,
+							"parameters": {
+								"key": 32
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 426451299321957,
+							"parameters": {
+								"instance-variable": "UseHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 382184160294195
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 481003081467004,
+							"parameters": {
+								"key": 87
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 405066185082169,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 592952552073002
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 218565460128059,
+							"parameters": {
+								"key": 68
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 228411494617869,
+							"parameters": {
+								"instance-variable": "RightHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 704451346225919
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 313405008281062,
+							"parameters": {
+								"key": 83
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 864325670298759,
+							"parameters": {
+								"instance-variable": "DownHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 411101549469104
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 602244766154802,
+							"parameters": {
+								"key": 65
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 393765394726930,
+							"parameters": {
+								"instance-variable": "LeftHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 290349708637906
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 375493507618750,
+							"parameters": {
+								"key": 71
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 159103124131449,
+							"parameters": {
+								"instance-variable": "SprintHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 186956773271811
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 344504496925819,
+							"parameters": {
+								"key": 70
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 592141485093838,
+							"parameters": {
+								"instance-variable": "UseHeld",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 828509626684075
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 393651535379127,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 224217392826567,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 752528114259142
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 187380479283919,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 382203530741808,
+							"parameters": {
+								"instance-variable": "RightHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 885226989167933
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 464967993059579,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 671791513015901,
+							"parameters": {
+								"instance-variable": "DownHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 930260724139464
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 508650433211298,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 350619473433276,
+							"parameters": {
+								"instance-variable": "LeftHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 837401650115812
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 644326803491989,
+							"parameters": {
+								"key": 16
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 616012607830181,
+							"parameters": {
+								"instance-variable": "SprintHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 486574338673833
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 644876945310924,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 960887543938454,
+							"parameters": {
+								"instance-variable": "UseHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 890974729329288
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 644487695179699,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 369214425407917,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 798995405895468
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 327689654171065,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 379342436241156,
+							"parameters": {
+								"instance-variable": "RightHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 968459128623629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 643140817474899,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 840835232948673,
+							"parameters": {
+								"instance-variable": "DownHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 112018858933875
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 765685090842619,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 745348513249908,
+							"parameters": {
+								"instance-variable": "LeftHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 746145181413637
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 728419766404012,
+							"parameters": {
+								"key": 71
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 416311639849751,
+							"parameters": {
+								"instance-variable": "SprintHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 124536355121304
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 802223619813263,
+							"parameters": {
+								"key": 70
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 427674742449581,
+							"parameters": {
+								"instance-variable": "UseHeld",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 101060040613841
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 696998725531660,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 414677704883678,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 871499749848936
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 938986714453837,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 435422559026009,
+							"parameters": {
+								"instance-variable": "RightHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 471659994337583
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 558001792793902,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 297812892350117,
+							"parameters": {
+								"instance-variable": "DownHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 822936569860933
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 239198223765554,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 257452539643743,
+							"parameters": {
+								"instance-variable": "LeftHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 188975728407902
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 520341232979504,
+							"parameters": {
+								"key": 16
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 707307229997798,
+							"parameters": {
+								"instance-variable": "SprintHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 498177949197049
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 459816658649019,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 613001497600551,
+							"parameters": {
+								"instance-variable": "UseHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 458309172101767
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 360429051152101,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 990435178963628,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 898653190094269
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 671957183485237,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 732800706032880,
+							"parameters": {
+								"instance-variable": "RightHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 585953228251762
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 246247719807397,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 407421636183292,
+							"parameters": {
+								"instance-variable": "DownHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 444714927788917
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 955961263631696,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 247487648538021,
+							"parameters": {
+								"instance-variable": "LeftHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 890556119691214
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 547583973685846,
+							"parameters": {
+								"key": 71
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 203474641757581,
+							"parameters": {
+								"instance-variable": "SprintHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 514298822283746
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 637251223059268,
+							"parameters": {
+								"key": 70
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 444358644125954,
+							"parameters": {
+								"instance-variable": "UseHeld",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 547386294073207
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 301249730868235,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 794145597261277,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 234447584933653,
+							"parameters": {
+								"instance-variable": "RightHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 829411042669977,
+							"parameters": {
+								"instance-variable": "DownHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 849662772142153,
+							"parameters": {
+								"instance-variable": "LeftHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 328152734013623,
+							"parameters": {
+								"instance-variable": "SprintHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 731412484703824,
+							"parameters": {
+								"instance-variable": "UseHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_1",
+							"sid": 374605566449972,
+							"parameters": {
+								"animation": "\"Dead\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 538803757752768
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 983123015837095,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 367459267747950,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 137315116367821,
+							"parameters": {
+								"instance-variable": "RightHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 489626117892475,
+							"parameters": {
+								"instance-variable": "DownHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 429766482675723,
+							"parameters": {
+								"instance-variable": "LeftHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 844271109210700,
+							"parameters": {
+								"instance-variable": "SprintHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 450888431771825,
+							"parameters": {
+								"instance-variable": "UseHeld",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_2",
+							"sid": 371128564997186,
+							"parameters": {
+								"animation": "\"Dead\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 509415462391267
+				}
+			],
+			"sid": 531806296355707
 		},
 		{
 			"eventType": "group",
@@ -779,11 +1919,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 393871619953656,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 624247572053654,
 							"parameters": {
-								"key": 32
+								"instance-variable": "UseHeld",
+								"comparison": 5,
+								"value": "1"
 							}
 						},
 						{
@@ -912,11 +2054,13 @@
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 608659465158033,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 190019947625483,
 							"parameters": {
-								"key": 37
+								"instance-variable": "LeftHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -955,11 +2099,13 @@
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 757148422821044,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 795891783313172,
 							"parameters": {
-								"key": 39
+								"instance-variable": "RightHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -1079,7 +2225,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 814057932951514,
+							"sid": 463227608685428,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1089,7 +2235,7 @@
 						{
 							"id": "compare-x",
 							"objectClass": "Player_2",
-							"sid": 722413076393329,
+							"sid": 879960991377905,
 							"parameters": {
 								"comparison": 4,
 								"x-co-ordinate": "Player_2_Boat.X"
@@ -1100,7 +2246,7 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_2",
-							"sid": 837692918219996,
+							"sid": 454384773668520,
 							"parameters": {
 								"animation": "\"Face\"",
 								"from": "beginning"
@@ -1109,7 +2255,7 @@
 						{
 							"id": "set-x",
 							"objectClass": "Player_2",
-							"sid": 614059271193291,
+							"sid": 127448043856815,
 							"parameters": {
 								"x": "Player_2.X - ceil((Player_2.X - Player_2_Boat.X) * 0.05)"
 							}
@@ -1117,13 +2263,13 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "Player_2",
-							"sid": 922039184828191,
+							"sid": 675572664677849,
 							"parameters": {
 								"state": "mirrored"
 							}
 						}
 					],
-					"sid": 579522607987614
+					"sid": 398347475719249
 				},
 				{
 					"eventType": "block",
@@ -1131,7 +2277,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 258888499111392,
+							"sid": 248307827073386,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1141,7 +2287,7 @@
 						{
 							"id": "compare-x",
 							"objectClass": "Player_2",
-							"sid": 867744339704780,
+							"sid": 214281471462115,
 							"parameters": {
 								"comparison": 2,
 								"x-co-ordinate": "Player_2_Boat.X"
@@ -1152,7 +2298,7 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_2",
-							"sid": 932872776955508,
+							"sid": 232050003588053,
 							"parameters": {
 								"animation": "\"Face\"",
 								"from": "beginning"
@@ -1161,7 +2307,7 @@
 						{
 							"id": "set-x",
 							"objectClass": "Player_2",
-							"sid": 781239275340269,
+							"sid": 426311292332403,
 							"parameters": {
 								"x": "Player_2.X + ceil((Player_2_Boat.X - Player_2.X) * 0.05)"
 							}
@@ -1169,13 +2315,13 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "Player_2",
-							"sid": 566988895899033,
+							"sid": 115094120431744,
 							"parameters": {
 								"state": "not-mirrored"
 							}
 						}
 					],
-					"sid": 387825269051410
+					"sid": 112881269329187
 				},
 				{
 					"eventType": "block",
@@ -1183,7 +2329,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 664439020995998,
+							"sid": 751708755470268,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1195,7 +2341,7 @@
 						{
 							"id": "set-y",
 							"objectClass": "Player_2",
-							"sid": 601129278143086,
+							"sid": 554850267778846,
 							"parameters": {
 								"y": "Player_2.Y - (((Player_2.Y - Player_2_Boat.Y) * 0.1))"
 							}
@@ -1203,7 +2349,7 @@
 						{
 							"id": "set-enabled",
 							"objectClass": "Player_2",
-							"sid": 764147149116701,
+							"sid": 771998430132574,
 							"behaviorType": "Platform",
 							"parameters": {
 								"state": "disabled"
@@ -1212,13 +2358,13 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "Player_2",
-							"sid": 601602488912201,
+							"sid": 606319873671065,
 							"parameters": {
 								"opacity": "max(0, min(75, (abs(Player_2.Y - Player_2_Boat.Y) + abs(Player_2.X - Player_2_Boat.X) / 2)))"
 							}
 						}
 					],
-					"sid": 185018399324296
+					"sid": 229689026488355
 				},
 				{
 					"eventType": "block",
@@ -1226,7 +2372,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 178040608767826,
+							"sid": 663138421593031,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1236,7 +2382,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 358985553159244,
+							"sid": 237203683834596,
 							"parameters": {
 								"first-value": "abs(Player_2.X - Player_2_Boat.X) + abs(Player_2.Y - Player_2_Boat.Y)",
 								"comparison": 2,
@@ -1248,7 +2394,7 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "Player_2",
-							"sid": 292975894714053,
+							"sid": 979751444390773,
 							"parameters": {
 								"opacity": "0"
 							}
@@ -1256,7 +2402,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 752261946485574,
+							"sid": 840883575015213,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"value": "1"
@@ -1265,7 +2411,7 @@
 						{
 							"id": "add-to-instvar",
 							"objectClass": "Player_2",
-							"sid": 977246127331796,
+							"sid": 104790460049849,
 							"parameters": {
 								"instance-variable": "Score",
 								"value": "Player_2.GemCount * GemScoreCount + Player_2.TreasureChestCount * TreasureChestScoreCount"
@@ -1274,7 +2420,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 795854459976021,
+							"sid": 680629602313132,
 							"parameters": {
 								"instance-variable": "GemCount",
 								"value": "0"
@@ -1283,7 +2429,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 559316295206286,
+							"sid": 614097776468266,
 							"parameters": {
 								"instance-variable": "TreasureChestCount",
 								"value": "0"
@@ -1292,14 +2438,14 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 795861349564058,
+							"sid": 733581560371605,
 							"parameters": {
 								"instance-variable": "CarryWeight",
 								"value": "0"
 							}
 						}
 					],
-					"sid": 184502001135543
+					"sid": 406249849525717
 				},
 				{
 					"eventType": "block",
@@ -1307,7 +2453,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 519142399130781,
+							"sid": 859961633833695,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1319,7 +2465,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "Player_2",
-							"sid": 794759525441255,
+							"sid": 368416538377806,
 							"parameters": {
 								"x": "Player_2_Boat.X",
 								"y": "Player_2_Boat.Y"
@@ -1328,7 +2474,7 @@
 						{
 							"id": "set-enabled",
 							"objectClass": "Player_2",
-							"sid": 905824143456614,
+							"sid": 171632486086588,
 							"behaviorType": "Platform",
 							"parameters": {
 								"state": "disabled"
@@ -1337,29 +2483,31 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "Player_2",
-							"sid": 662530102262552,
+							"sid": 405449039693492,
 							"parameters": {
 								"opacity": "0"
 							}
 						}
 					],
-					"sid": 936122789248746
+					"sid": 705525117249531
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 512031127516602,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 904392420647848,
 							"parameters": {
-								"key": 70
+								"instance-variable": "UseHeld",
+								"comparison": 5,
+								"value": "1"
 							}
 						},
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 592645442536123,
+							"sid": 868887820414307,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1371,7 +2519,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 948351136531506,
+							"sid": 927122616678865,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"value": "0"
@@ -1380,7 +2528,7 @@
 						{
 							"id": "set-enabled",
 							"objectClass": "Player_2",
-							"sid": 773822060868585,
+							"sid": 108352032566472,
 							"behaviorType": "Platform",
 							"parameters": {
 								"state": "enabled"
@@ -1389,7 +2537,7 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_2",
-							"sid": 830191703628495,
+							"sid": 111870475147248,
 							"behaviorType": "Platform",
 							"parameters": {
 								"vector-y": "350"
@@ -1398,7 +2546,7 @@
 						{
 							"id": "set-vector-x",
 							"objectClass": "Player_2",
-							"sid": 522442073897429,
+							"sid": 929959258008129,
 							"behaviorType": "Platform",
 							"parameters": {
 								"vector-x": "Player_2_Boat.Platform.VectorX"
@@ -1407,7 +2555,7 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_2",
-							"sid": 287618625732640,
+							"sid": 586920651259933,
 							"parameters": {
 								"animation": "\"Idle\"",
 								"from": "beginning"
@@ -1416,7 +2564,7 @@
 						{
 							"id": "set-max-speed",
 							"objectClass": "Player_2",
-							"sid": 637513905827789,
+							"sid": 537141142714782,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "Player_2_Boat.Platform.Speed"
@@ -1425,13 +2573,13 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "Player_2",
-							"sid": 415405320380783,
+							"sid": 747933060275795,
 							"parameters": {
 								"opacity": "100"
 							}
 						}
 					],
-					"sid": 284994488471236
+					"sid": 610101756270544
 				},
 				{
 					"eventType": "block",
@@ -1439,7 +2587,7 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "Player_2",
-							"sid": 880925906745630,
+							"sid": 968173187892540,
 							"parameters": {
 								"object": "Player_2_Boat"
 							}
@@ -1447,7 +2595,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 501546873830121,
+							"sid": 692357886914470,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1459,14 +2607,14 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 808111838524820,
+							"sid": 110180388900291,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"value": "2"
 							}
 						}
 					],
-					"sid": 387797196006790
+					"sid": 696293196604525
 				},
 				{
 					"eventType": "block",
@@ -1474,7 +2622,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 388814619329636,
+							"sid": 918476291166979,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1482,11 +2630,13 @@
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 489967531197028,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 554581855467216,
 							"parameters": {
-								"key": 65
+								"instance-variable": "LeftHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -1494,7 +2644,7 @@
 						{
 							"id": "simulate-control",
 							"objectClass": "Player_2_Boat",
-							"sid": 471040369364414,
+							"sid": 413037888621565,
 							"behaviorType": "Platform",
 							"parameters": {
 								"control": "left"
@@ -1503,13 +2653,13 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "Player_2_Boat",
-							"sid": 655764532783241,
+							"sid": 836180289428802,
 							"parameters": {
 								"state": "mirrored"
 							}
 						}
 					],
-					"sid": 315861989144648
+					"sid": 131050166996222
 				},
 				{
 					"eventType": "block",
@@ -1517,7 +2667,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 410460663446780,
+							"sid": 983136136234378,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1525,11 +2675,13 @@
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 765692915814802,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 479285014011432,
 							"parameters": {
-								"key": 68
+								"instance-variable": "RightHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -1537,7 +2689,7 @@
 						{
 							"id": "simulate-control",
 							"objectClass": "Player_2_Boat",
-							"sid": 868674706257056,
+							"sid": 177804418475269,
 							"behaviorType": "Platform",
 							"parameters": {
 								"control": "right"
@@ -1546,13 +2698,13 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "Player_2_Boat",
-							"sid": 464562355955041,
+							"sid": 700416344539303,
 							"parameters": {
 								"state": "not-mirrored"
 							}
 						}
 					],
-					"sid": 366827772747332
+					"sid": 108319457827482
 				},
 				{
 					"eventType": "block",
@@ -1560,7 +2712,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 764584418908855,
+							"sid": 868561201822173,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -1572,14 +2724,14 @@
 						{
 							"id": "set-magnitude",
 							"objectClass": "Player_2_Boat",
-							"sid": 430115820555514,
+							"sid": 743444105094770,
 							"behaviorType": "Sine",
 							"parameters": {
 								"magnitude": "15 - (Player_2_Boat.Platform.Speed / 50)"
 							}
 						}
 					],
-					"sid": 237039194807221
+					"sid": 109816228312894
 				},
 				{
 					"eventType": "block",
@@ -1587,7 +2739,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 295679973629860,
+							"sid": 690658072695835,
 							"parameters": {
 								"first-value": "Player_2_Boat.Platform.VectorX",
 								"comparison": 4,
@@ -1599,13 +2751,13 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "Player_2_Boat",
-							"sid": 765744733530756,
+							"sid": 931618300365017,
 							"parameters": {
 								"state": "not-mirrored"
 							}
 						}
 					],
-					"sid": 591006141310624
+					"sid": 973075490158055
 				},
 				{
 					"eventType": "block",
@@ -1613,7 +2765,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 208594405182957,
+							"sid": 995459175054833,
 							"parameters": {
 								"first-value": "Player_2_Boat.Platform.VectorX",
 								"comparison": 2,
@@ -1625,16 +2777,16 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "Player_2_Boat",
-							"sid": 696389650978527,
+							"sid": 530822662199753,
 							"parameters": {
 								"state": "mirrored"
 							}
 						}
 					],
-					"sid": 297729234055340
+					"sid": 266922558940621
 				}
 			],
-			"sid": 326403271107519
+			"sid": 870945807950025
 		},
 		{
 			"eventType": "group",
@@ -1647,11 +2799,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 635836059624355,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 694891544528085,
 							"parameters": {
-								"key": 37
+								"instance-variable": "LeftHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -1672,11 +2826,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 223846591608546,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 387871775754305,
 							"parameters": {
-								"key": 39
+								"instance-variable": "RightHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -1709,6 +2865,15 @@
 							"sid": 969483352659311,
 							"parameters": {
 								"y": "Player_1.Y - 75"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Player_1",
+							"sid": 574486128402662,
+							"behaviorType": "Platform",
+							"parameters": {
+								"acceleration": "Player_1.TargetMaxSpeed + 200"
 							}
 						}
 					],
@@ -1866,19 +3031,21 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_1",
+							"sid": 733334076631275,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
 							"sid": 248683134832116,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
 								"value": "0"
-							}
-						},
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 764704536979067,
-							"parameters": {
-								"key": 38
 							}
 						},
 						{
@@ -1900,11 +3067,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 685384208116603,
+							"sid": 185376512745656,
 							"parameters": {
 								"first-value": "Player_1.Platform.VectorY",
 								"comparison": 4,
-								"second-value": "-500 - (Player_1.TargetMaxSpeed - 300)"
+								"second-value": "-300 - (Player_1.TargetMaxSpeed - 300)"
 							}
 						}
 					],
@@ -1912,10 +3079,10 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_1",
-							"sid": 112189515472636,
+							"sid": 431859956595622,
 							"behaviorType": "Platform",
 							"parameters": {
-								"vector-y": "Player_1.Platform.VectorY - 30 - ((Player_1.TargetMaxSpeed - 300) / 20)"
+								"vector-y": "Player_1.Platform.VectorY - 13 - ((Player_1.TargetMaxSpeed - 250) / 25)"
 							}
 						}
 					],
@@ -1937,19 +3104,21 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 587964767551674,
+							"sid": 953062917529393,
 							"parameters": {
 								"first-value": "Player_1.Platform.VectorY",
 								"comparison": 2,
-								"second-value": "700 + (Player_1.TargetMaxSpeed - 300)"
+								"second-value": "900 + (Player_1.TargetMaxSpeed)"
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 654500530599983,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 586698941181964,
 							"parameters": {
-								"key": 40
+								"instance-variable": "DownHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						},
 						{
@@ -1973,14 +3142,18 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_1",
-							"sid": 457819858503733,
+							"sid": 596603530029484,
 							"behaviorType": "Platform",
 							"parameters": {
-								"vector-y": "Player_1.Platform.VectorY + 25 + ((Player_1.TargetMaxSpeed - 300) / 20)"
+								"vector-y": "Player_1.Platform.VectorY + 15 + ((Player_1.TargetMaxSpeed - 150) / 20)"
 							}
 						}
 					],
 					"sid": 682291943130022
+				},
+				{
+					"eventType": "comment",
+					"text": "Buoyancy / gravity"
 				},
 				{
 					"eventType": "block",
@@ -2104,11 +3277,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 904793814034494,
+							"sid": 322855118158612,
 							"parameters": {
 								"first-value": "Player_1.Platform.VectorY",
 								"comparison": 2,
-								"second-value": "800"
+								"second-value": "500"
 							}
 						},
 						{
@@ -2133,10 +3306,10 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_1",
-							"sid": 640655148380644,
+							"sid": 625885577146567,
 							"behaviorType": "Platform",
 							"parameters": {
-								"vector-y": "Player_1.Platform.VectorY + 35"
+								"vector-y": "Player_1.Platform.VectorY + 30"
 							}
 						}
 					],
@@ -2167,11 +3340,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 618733603274803,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 539909201304834,
 							"parameters": {
-								"key": 16
+								"instance-variable": "SprintHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -2179,10 +3354,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_1",
-							"sid": 282655931796741,
+							"sid": 763845498035250,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "600"
+								"value": "200 + (Player_1.Health / 2.5)"
 							}
 						}
 					],
@@ -2192,23 +3367,24 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 426882969839710,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 438133405886526,
 							"parameters": {
-								"key": 16
-							},
-							"isInverted": true
+								"instance-variable": "SprintHeld",
+								"comparison": 0,
+								"value": "0"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_1",
-							"sid": 771800828139921,
+							"sid": 571589234690134,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "300"
+								"value": "100 + (Player_1.Health / 5)"
 							}
 						}
 					],
@@ -2363,14 +3539,68 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_1",
-							"sid": 853453824733076,
+							"sid": 726121554274861,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "150"
+								"value": "(Player_1.Health / 5)"
 							}
 						}
 					],
 					"sid": 756696527242288
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 287087776973642,
+							"parameters": {
+								"first-value": "Player_1.Platform.MaxSpeed",
+								"comparison": 3,
+								"second-value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_1",
+							"sid": 350339921254806,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "50"
+							}
+						}
+					],
+					"sid": 899402087978716
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 314826657263296,
+							"parameters": {
+								"first-value": "Player_1.Platform.Acceleration",
+								"comparison": 3,
+								"second-value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-acceleration",
+							"objectClass": "Player_1",
+							"sid": 130946212388098,
+							"behaviorType": "Platform",
+							"parameters": {
+								"acceleration": "50"
+							}
+						}
+					],
+					"sid": 316199139345275
 				}
 			],
 			"sid": 522787896268692
@@ -2386,11 +3616,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 358885475212698,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 972293998264425,
 							"parameters": {
-								"key": 65
+								"instance-variable": "LeftHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -2398,24 +3630,26 @@
 						{
 							"id": "simulate-control",
 							"objectClass": "Player_2",
-							"sid": 392732883968998,
+							"sid": 245295967860457,
 							"behaviorType": "Platform",
 							"parameters": {
 								"control": "left"
 							}
 						}
 					],
-					"sid": 292788172659674
+					"sid": 319963108089986
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 342117287501926,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 419665872475728,
 							"parameters": {
-								"key": 68
+								"instance-variable": "RightHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -2423,14 +3657,14 @@
 						{
 							"id": "simulate-control",
 							"objectClass": "Player_2",
-							"sid": 453705204245408,
+							"sid": 774201372560809,
 							"behaviorType": "Platform",
 							"parameters": {
 								"control": "right"
 							}
 						}
 					],
-					"sid": 190906254038603
+					"sid": 468904294768408
 				},
 				{
 					"eventType": "block",
@@ -2438,20 +3672,29 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 463346494038876
+							"sid": 670904429864154
 						}
 					],
 					"actions": [
 						{
 							"id": "set-y",
 							"objectClass": "Player_2",
-							"sid": 676156477134489,
+							"sid": 805459909315803,
 							"parameters": {
 								"y": "Player_2.Y - 75"
 							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Player_2",
+							"sid": 110884701234377,
+							"behaviorType": "Platform",
+							"parameters": {
+								"acceleration": "Player_2.TargetMaxSpeed + 200"
+							}
 						}
 					],
-					"sid": 571079305936476
+					"sid": 383138175932749
 				},
 				{
 					"eventType": "block",
@@ -2459,7 +3702,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 444617355799534,
+							"sid": 856562697537451,
 							"parameters": {
 								"first-value": "abs(Player_2.Platform.VectorX)",
 								"comparison": 2,
@@ -2469,7 +3712,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 929546457935894,
+							"sid": 782053437852960,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2481,14 +3724,14 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_2",
-							"sid": 574420139985636,
+							"sid": 171214447659310,
 							"parameters": {
 								"animation": "\"Face\"",
 								"from": "beginning"
 							}
 						}
 					],
-					"sid": 557406250622270
+					"sid": 118636313788617
 				},
 				{
 					"eventType": "block",
@@ -2496,7 +3739,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 318344331752046,
+							"sid": 452775825383937,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2506,7 +3749,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 609293750763195,
+							"sid": 114309855400751,
 							"parameters": {
 								"first-value": "abs(Player_2.Platform.VectorX)",
 								"comparison": 4,
@@ -2518,14 +3761,14 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_2",
-							"sid": 819010797862324,
+							"sid": 736228651989821,
 							"parameters": {
 								"animation": "\"Side_move\"",
 								"from": "beginning"
 							}
 						}
 					],
-					"sid": 905867933621628
+					"sid": 856995365199388
 				},
 				{
 					"eventType": "block",
@@ -2533,7 +3776,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 189539337102586,
+							"sid": 601541895200725,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2543,7 +3786,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 178524332062755,
+							"sid": 760622257760863,
 							"parameters": {
 								"first-value": "Player_2.Platform.VectorX",
 								"comparison": 5,
@@ -2555,13 +3798,13 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "Player_2",
-							"sid": 773770737593151,
+							"sid": 512110966160036,
 							"parameters": {
 								"state": "not-mirrored"
 							}
 						}
 					],
-					"sid": 365236764824788
+					"sid": 594504517719924
 				},
 				{
 					"eventType": "block",
@@ -2569,7 +3812,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 563666061529620,
+							"sid": 447957881376626,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2579,7 +3822,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 214624910002458,
+							"sid": 100078067166684,
 							"parameters": {
 								"first-value": "Player_2.Platform.VectorX",
 								"comparison": 2,
@@ -2591,13 +3834,13 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "Player_2",
-							"sid": 689118577213387,
+							"sid": 657598120994643,
 							"parameters": {
 								"state": "mirrored"
 							}
 						}
 					],
-					"sid": 671496586072284
+					"sid": 382700654895953
 				},
 				{
 					"eventType": "block",
@@ -2605,7 +3848,17 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 894683642487441,
+							"sid": 720917011509686,
+							"parameters": {
+								"instance-variable": "UpHeld",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 309811184642455,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2613,17 +3866,9 @@
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 346244816306679,
-							"parameters": {
-								"key": 87
-							}
-						},
-						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 662244115763109,
+							"sid": 873091821449342,
 							"parameters": {
 								"interval-seconds": "0.02"
 							}
@@ -2631,7 +3876,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 805519165992442,
+							"sid": 132893198224527,
 							"parameters": {
 								"object": "ForeWater"
 							}
@@ -2639,11 +3884,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 941089528348105,
+							"sid": 256966194066406,
 							"parameters": {
 								"first-value": "Player_2.Platform.VectorY",
 								"comparison": 4,
-								"second-value": "-500 - (Player_2.TargetMaxSpeed - 300)"
+								"second-value": "-300 - (Player_2.TargetMaxSpeed - 300)"
 							}
 						}
 					],
@@ -2651,14 +3896,14 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_2",
-							"sid": 957342458051957,
+							"sid": 127763149873721,
 							"behaviorType": "Platform",
 							"parameters": {
-								"vector-y": "Player_2.Platform.VectorY - 30 - ((Player_2.TargetMaxSpeed - 300) / 20)"
+								"vector-y": "Player_2.Platform.VectorY - 13 - ((Player_2.TargetMaxSpeed - 250) / 25)"
 							}
 						}
 					],
-					"sid": 540155083001088
+					"sid": 271145568909737
 				},
 				{
 					"eventType": "block",
@@ -2666,7 +3911,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 631200882677613,
+							"sid": 245943176985702,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2676,25 +3921,27 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 277388608935530,
+							"sid": 537164525327112,
 							"parameters": {
 								"first-value": "Player_2.Platform.VectorY",
 								"comparison": 2,
-								"second-value": "700 + (Player_2.TargetMaxSpeed - 300)"
+								"second-value": "900 + (Player_2.TargetMaxSpeed)"
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 382073350121680,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 424347520160493,
 							"parameters": {
-								"key": 83
+								"instance-variable": "DownHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						},
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 746328163724583,
+							"sid": 372078946971992,
 							"parameters": {
 								"interval-seconds": "0.02"
 							}
@@ -2702,7 +3949,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 381217178531950,
+							"sid": 399037547552786,
 							"parameters": {
 								"object": "ForeWater"
 							}
@@ -2712,14 +3959,18 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_2",
-							"sid": 390526507451210,
+							"sid": 486776117149425,
 							"behaviorType": "Platform",
 							"parameters": {
-								"vector-y": "Player_2.Platform.VectorY + 25 + ((Player_2.TargetMaxSpeed - 300) / 20)"
+								"vector-y": "Player_2.Platform.VectorY + 15 + ((Player_2.TargetMaxSpeed - 150) / 20)"
 							}
 						}
 					],
-					"sid": 674862979002023
+					"sid": 911050032628792
+				},
+				{
+					"eventType": "comment",
+					"text": "Buoyancy / gravity"
 				},
 				{
 					"eventType": "block",
@@ -2727,7 +3978,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 153652123706918,
+							"sid": 800776883522558,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2737,7 +3988,7 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 861154500373953,
+							"sid": 830341422032893,
 							"parameters": {
 								"interval-seconds": "0.02"
 							}
@@ -2745,7 +3996,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 202988569494543,
+							"sid": 706467909365749,
 							"parameters": {
 								"object": "ForeWater"
 							}
@@ -2753,7 +4004,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 574009423763427,
+							"sid": 484815798627696,
 							"parameters": {
 								"first-value": "Player_2.Platform.VectorY",
 								"comparison": 2,
@@ -2765,14 +4016,14 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_2",
-							"sid": 159297144281785,
+							"sid": 625612474401735,
 							"behaviorType": "Platform",
 							"parameters": {
 								"vector-y": "Player_2.Platform.VectorY + 5"
 							}
 						}
 					],
-					"sid": 191623396178328
+					"sid": 658513628512801
 				},
 				{
 					"eventType": "block",
@@ -2780,7 +4031,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 357733361715595,
+							"sid": 880648529788383,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2790,7 +4041,7 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 579969559552293,
+							"sid": 139106535607113,
 							"parameters": {
 								"interval-seconds": "0.02"
 							}
@@ -2798,7 +4049,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 838836395934998,
+							"sid": 787782886492942,
 							"parameters": {
 								"object": "ForeWater"
 							}
@@ -2806,7 +4057,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 780876986257244,
+							"sid": 754962409329120,
 							"parameters": {
 								"first-value": "Player_2.Platform.VectorY",
 								"comparison": 4,
@@ -2818,14 +4069,14 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_2",
-							"sid": 545206184780750,
+							"sid": 230891552162192,
 							"behaviorType": "Platform",
 							"parameters": {
 								"vector-y": "Player_2.Platform.VectorY - 15"
 							}
 						}
 					],
-					"sid": 162258831485667
+					"sid": 720008614844876
 				},
 				{
 					"eventType": "block",
@@ -2833,7 +4084,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 342972340574016,
+							"sid": 692049379451971,
 							"parameters": {
 								"instance-variable": "InBoat",
 								"comparison": 0,
@@ -2843,17 +4094,17 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 864413247596595,
+							"sid": 895494270451321,
 							"parameters": {
 								"first-value": "Player_2.Platform.VectorY",
 								"comparison": 2,
-								"second-value": "800"
+								"second-value": "500"
 							}
 						},
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 988992186863954,
+							"sid": 977783282903300,
 							"parameters": {
 								"interval-seconds": "0.02"
 							}
@@ -2861,7 +4112,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 588727826413536,
+							"sid": 223875778730979,
 							"parameters": {
 								"object": "ForeWater"
 							},
@@ -2872,14 +4123,14 @@
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player_2",
-							"sid": 621211633148521,
+							"sid": 491706311333738,
 							"behaviorType": "Platform",
 							"parameters": {
-								"vector-y": "Player_2.Platform.VectorY + 35"
+								"vector-y": "Player_2.Platform.VectorY + 30"
 							}
 						}
 					],
-					"sid": 380778458718283
+					"sid": 874256764063870
 				},
 				{
 					"eventType": "block",
@@ -2887,30 +4138,32 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 813272389622459
+							"sid": 733698231276516
 						}
 					],
 					"actions": [
 						{
 							"id": "set-y",
 							"objectClass": "Player_2",
-							"sid": 360893638545788,
+							"sid": 927380541843590,
 							"parameters": {
 								"y": "Player_2.Y + 75"
 							}
 						}
 					],
-					"sid": 742685708397760
+					"sid": 253635899821289
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 124356796915343,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 789969723859144,
 							"parameters": {
-								"key": 71
+								"instance-variable": "SprintHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
@@ -2918,40 +4171,41 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 429528187229950,
+							"sid": 279758973052012,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "600"
+								"value": "200 + (Player_2.Health / 2.5)"
 							}
 						}
 					],
-					"sid": 102522974814514
+					"sid": 273896574271408
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 631695196886324,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 337065785965884,
 							"parameters": {
-								"key": 71
-							},
-							"isInverted": true
+								"instance-variable": "SprintHeld",
+								"comparison": 0,
+								"value": "0"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 855945962359782,
+							"sid": 372593712424280,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "300"
+								"value": "100 + (Player_2.Health / 5)"
 							}
 						}
 					],
-					"sid": 327349900706168
+					"sid": 732880136821234
 				},
 				{
 					"eventType": "block",
@@ -2959,7 +4213,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 548050309684151,
+							"sid": 625858216619051,
 							"parameters": {
 								"first-value": "Player_2.Platform.MaxSpeed",
 								"comparison": 2,
@@ -2971,14 +4225,14 @@
 						{
 							"id": "set-max-speed",
 							"objectClass": "Player_2",
-							"sid": 929531782847387,
+							"sid": 640192287476388,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "min(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed + 3)"
 							}
 						}
 					],
-					"sid": 711904786745096
+					"sid": 636978792782394
 				},
 				{
 					"eventType": "block",
@@ -2986,7 +4240,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 415232203128718,
+							"sid": 532229791050058,
 							"parameters": {
 								"first-value": "Player_2.Platform.MaxSpeed",
 								"comparison": 4,
@@ -2998,14 +4252,14 @@
 						{
 							"id": "set-max-speed",
 							"objectClass": "Player_2",
-							"sid": 485115417482336,
+							"sid": 678845175466555,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "max(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed - 5)"
 							}
 						}
 					],
-					"sid": 770390568142496
+					"sid": 576183805416088
 				},
 				{
 					"eventType": "block",
@@ -3013,7 +4267,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 761876381549943,
+							"sid": 690611842539058,
 							"parameters": {
 								"first-value": "Player_2.Platform.MaxSpeed",
 								"comparison": 2,
@@ -3025,14 +4279,14 @@
 						{
 							"id": "set-max-speed",
 							"objectClass": "Player_2",
-							"sid": 399873309591788,
+							"sid": 497882991395466,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "min(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed + 3)"
 							}
 						}
 					],
-					"sid": 136285023144319
+					"sid": 245952194132323
 				},
 				{
 					"eventType": "block",
@@ -3040,7 +4294,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 857083040877089,
+							"sid": 882727648664492,
 							"parameters": {
 								"first-value": "Player_2.Platform.MaxSpeed",
 								"comparison": 4,
@@ -3052,14 +4306,14 @@
 						{
 							"id": "set-max-speed",
 							"objectClass": "Player_2",
-							"sid": 140750595720283,
+							"sid": 560785753055483,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "max(Player_2.TargetMaxSpeed, Player_2.Platform.MaxSpeed - 5)"
 							}
 						}
 					],
-					"sid": 175498127408620
+					"sid": 330970058704269
 				},
 				{
 					"eventType": "block",
@@ -3067,7 +4321,7 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "Player_2",
-							"sid": 573604511870720,
+							"sid": 340704766503556,
 							"parameters": {
 								"object": "Ground"
 							}
@@ -3077,14 +4331,14 @@
 						{
 							"id": "set-max-speed",
 							"objectClass": "Player_2",
-							"sid": 946062057505182,
+							"sid": 912907667663402,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "Player_2.TargetMaxSpeed"
 							}
 						}
 					],
-					"sid": 556878221307662
+					"sid": 637313555718290
 				},
 				{
 					"eventType": "block",
@@ -3092,7 +4346,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 602649047333480,
+							"sid": 539763582527564,
 							"parameters": {
 								"object": "Ground"
 							}
@@ -3102,17 +4356,71 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player_2",
-							"sid": 113388680640385,
+							"sid": 265797142762855,
 							"parameters": {
 								"instance-variable": "TargetMaxSpeed",
-								"value": "150"
+								"value": "(Player_2.Health / 5)"
 							}
 						}
 					],
-					"sid": 371091730415030
+					"sid": 777780147022597
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 114280034900263,
+							"parameters": {
+								"first-value": "Player_2.Platform.MaxSpeed",
+								"comparison": 3,
+								"second-value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_2",
+							"sid": 182712001486672,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "50"
+							}
+						}
+					],
+					"sid": 987018454543744
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 463751634730502,
+							"parameters": {
+								"first-value": "Player_2.Platform.Acceleration",
+								"comparison": 3,
+								"second-value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-acceleration",
+							"objectClass": "Player_2",
+							"sid": 401223152565732,
+							"behaviorType": "Platform",
+							"parameters": {
+								"acceleration": "50"
+							}
+						}
+					],
+					"sid": 590022724799510
 				}
 			],
-			"sid": 385549897669155
+			"sid": 353959550823081
 		},
 		{
 			"eventType": "group",
@@ -3172,6 +4480,66 @@
 						}
 					],
 					"sid": 995669133046043
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 759608093651429,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 2,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "Player_1_text",
+							"sid": 454794922058557,
+							"parameters": {
+								"text": "\"  Health: \" & round(Player_1.Health)"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "Player_1_text",
+							"sid": 368820386471532,
+							"parameters": {
+								"text": "\"  Score: \" & round(Player_1.Score)"
+							}
+						}
+					],
+					"sid": 766389654111109
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 195121773872022,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Player_1_text2",
+							"sid": 719072975243634,
+							"parameters": {
+								"text": "\"Not carrying anything\""
+							}
+						}
+					],
+					"sid": 448256945073911
 				}
 			],
 			"sid": 107421894307549
@@ -3231,9 +4599,77 @@
 							"parameters": {
 								"text": "\"MPH: \" & round(Player_2_Boat.Platform.Speed / 20)"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text2",
+							"sid": 133174066969017,
+							"parameters": {
+								"text": "\"Not carrying anything\""
+							}
 						}
 					],
 					"sid": 415308847179809
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 638539867211381,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 2,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "Player_2_text",
+							"sid": 865947315955516,
+							"parameters": {
+								"text": "\"  Health: \" & round(Player_2.Health)"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "Player_2_text",
+							"sid": 261107398585946,
+							"parameters": {
+								"text": "\"  Score: \" & round(Player_2.Score)"
+							}
+						}
+					],
+					"sid": 238149110428558
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 165889574068000,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text2",
+							"sid": 110625475282117,
+							"parameters": {
+								"text": "\"Not carrying anything\""
+							}
+						}
+					],
+					"sid": 129740103630849
 				}
 			],
 			"sid": 412521068612227
@@ -3249,11 +4685,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 952150423626335,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 946307116135728,
 							"parameters": {
-								"key": 32
+								"instance-variable": "UseHeld",
+								"comparison": 5,
+								"value": "1"
 							}
 						},
 						{
@@ -3298,19 +4736,57 @@
 								"instance-variable": "GemCount",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_1_text2",
+							"sid": 342059558979975,
+							"parameters": {
+								"text": "\"Carrying: \" & Player_1.GemCount & \" gem\""
+							}
 						}
 					],
-					"sid": 948556678561191
+					"sid": 948556678561191,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_1",
+									"sid": 594705445305007,
+									"parameters": {
+										"instance-variable": "GemCount",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "append-text",
+									"objectClass": "Player_1_text2",
+									"sid": 436983042443712,
+									"parameters": {
+										"text": "\"s\""
+									}
+								}
+							],
+							"sid": 433775636957902
+						}
+					]
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 694384670685494,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 161562842621997,
 							"parameters": {
-								"key": 32
+								"instance-variable": "UseHeld",
+								"comparison": 5,
+								"value": "1"
 							}
 						},
 						{
@@ -3355,6 +4831,14 @@
 								"instance-variable": "TreasureChestCount",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_1_text2",
+							"sid": 641604054509895,
+							"parameters": {
+								"text": "\"Carrying: Treasure chest\""
+							}
 						}
 					],
 					"sid": 391827774883645
@@ -3363,17 +4847,19 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 661354908772126,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 828698151650144,
 							"parameters": {
-								"key": 70
+								"instance-variable": "UseHeld",
+								"comparison": 5,
+								"value": "1"
 							}
 						},
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 996528173042986,
+							"sid": 814202250226369,
 							"parameters": {
 								"object": "Gem"
 							}
@@ -3381,7 +4867,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 185307269356368,
+							"sid": 566177209316575,
 							"parameters": {
 								"instance-variable": "CarryWeight",
 								"comparison": 3,
@@ -3393,12 +4879,12 @@
 						{
 							"id": "destroy",
 							"objectClass": "Gem",
-							"sid": 116756561589243
+							"sid": 997052500352336
 						},
 						{
 							"id": "add-to-instvar",
 							"objectClass": "Player_2",
-							"sid": 734780688459850,
+							"sid": 790025393752282,
 							"parameters": {
 								"instance-variable": "CarryWeight",
 								"value": "GemWeight"
@@ -3407,24 +4893,62 @@
 						{
 							"id": "add-to-instvar",
 							"objectClass": "Player_2",
-							"sid": 813973745571370,
+							"sid": 427552543718734,
 							"parameters": {
 								"instance-variable": "GemCount",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text2",
+							"sid": 854561853173916,
+							"parameters": {
+								"text": "\"Carrying: \" & Player_2.GemCount & \" gem\""
+							}
 						}
 					],
-					"sid": 439917422468141
+					"sid": 570687389562336,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_2",
+									"sid": 509119042329130,
+									"parameters": {
+										"instance-variable": "GemCount",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "append-text",
+									"objectClass": "Player_2_text2",
+									"sid": 605655486770074,
+									"parameters": {
+										"text": "\"s\""
+									}
+								}
+							],
+							"sid": 209183195185873
+						}
+					]
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 877776661706001,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 907475533965893,
 							"parameters": {
-								"key": 70
+								"instance-variable": "UseHeld",
+								"comparison": 5,
+								"value": "1"
 							}
 						},
 						{
@@ -3468,6 +4992,14 @@
 							"parameters": {
 								"instance-variable": "TreasureChestCount",
 								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text2",
+							"sid": 293932667751570,
+							"parameters": {
+								"text": "\"Carrying: Treasure chest\""
 							}
 						}
 					],
@@ -3534,6 +5066,16 @@
 								"comparison": 2,
 								"second-value": "25"
 							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 382398648671401,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
 						}
 					],
 					"actions": [
@@ -3555,7 +5097,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_1",
-							"sid": 473442449697423,
+							"sid": 227439673017007,
 							"parameters": {
 								"object": "Barricade_destroy_zone"
 							}
@@ -3563,7 +5105,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 436506562697199,
+							"sid": 961737777534306,
 							"parameters": {
 								"first-value": "abs(Player_1.Platform.VectorX)",
 								"comparison": 2,
@@ -3571,17 +5113,19 @@
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 961999534965974,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 247656456230668,
 							"parameters": {
-								"key": 16
+								"instance-variable": "SprintHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						},
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 795598655993134,
+							"sid": 860187562193027,
 							"parameters": {
 								"interval-seconds": "0.05"
 							}
@@ -3591,7 +5135,7 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Player_1",
-							"sid": 234434333572368,
+							"sid": 662580924331950,
 							"parameters": {
 								"object": "Spark",
 								"layer": "\"Canvas\"",
@@ -3601,7 +5145,75 @@
 							}
 						}
 					],
-					"sid": 514062968519010
+					"sid": 768505632485637
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 285649374457843,
+							"parameters": {
+								"first-value": "Player_1.Platform.VectorX",
+								"comparison": 5,
+								"second-value": "5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 943176196213226
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 763760345428629,
+							"parameters": {
+								"first-value": "Player_1.Platform.VectorX",
+								"comparison": 2,
+								"second-value": "-5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 963478333001328
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 907722261498015,
+							"parameters": {
+								"first-value": "Player_2.Platform.VectorX",
+								"comparison": 5,
+								"second-value": "5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 253473561692844
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 130988372357061,
+							"parameters": {
+								"first-value": "Player_2.Platform.VectorX",
+								"comparison": 2,
+								"second-value": "-5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 948994115886860
 				},
 				{
 					"eventType": "block",
@@ -3621,6 +5233,16 @@
 							"sid": 184985382539820,
 							"parameters": {
 								"animation": "\"Blowtorch\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 119359297160244,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
 							}
 						}
 					],
@@ -3666,6 +5288,16 @@
 								"comparison": 2,
 								"second-value": "25"
 							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 303083485915804,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
 						}
 					],
 					"actions": [
@@ -3693,11 +5325,13 @@
 							}
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 489331329180719,
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 996494343999796,
 							"parameters": {
-								"key": 71
+								"instance-variable": "SprintHeld",
+								"comparison": 0,
+								"value": "2"
 							}
 						},
 						{
@@ -3753,6 +5387,16 @@
 							"sid": 614263301771512,
 							"parameters": {
 								"animation": "\"Blowtorch\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 399944667161768,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
 							}
 						}
 					],
@@ -4002,10 +5646,140 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Coral",
+			"title": "Damage",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 355766924307692
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_1",
+							"sid": 399968508333674,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "round(Player_1.Health)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_2",
+							"sid": 645023846294939,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "round(Player_2.Health)"
+							}
+						}
+					],
+					"sid": 730826257260579
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 541349999872290,
+							"parameters": {
+								"interval-seconds": "0.1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Blood",
+							"sid": 276206794599704,
+							"parameters": {
+								"x": "Blood.X + cos(Blood.Angle)",
+								"y": "Blood.Y + sin(Blood.Angle)"
+							}
+						}
+					],
+					"sid": 810202343927837
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 587756007359322,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "1000"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 481305200132220,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_1",
+							"sid": 773018961023452,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 640351963455235
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 600146500223950,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "1000"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 796242954502705,
+							"parameters": {
+								"instance-variable": "InBoat",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_2",
+							"sid": 578980100137879,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 361385654564152
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -4015,6 +5789,16 @@
 							"sid": 286518547337769,
 							"parameters": {
 								"object": "Coral"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 517598709560707,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
 							}
 						}
 					],
@@ -4034,7 +5818,7 @@
 						{
 							"id": "set-angle",
 							"objectClass": "Blood",
-							"sid": 186514570936249,
+							"sid": 218941693494697,
 							"parameters": {
 								"angle": "random(360)"
 							}
@@ -4074,20 +5858,12 @@
 							}
 						},
 						{
-							"id": "tween-one-property",
-							"objectClass": "Blood",
-							"sid": 209097964748844,
-							"behaviorType": "Tween",
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_1",
+							"sid": 340473157653019,
 							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetHeight",
-								"end-value": "1000",
-								"time": "3",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
+								"instance-variable": "Health",
+								"value": "100 + ((abs(Player_1.Platform.VectorX) + abs(Player_1.Platform.VectorY)))"
 							}
 						}
 					],
@@ -4097,19 +5873,39 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Player_2",
-							"sid": 534459981464522,
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 591205898019467,
 							"parameters": {
-								"object": "Coral"
+								"interval-seconds": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 553681558905868,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "750"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 909281581883000,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "spawn-another-object",
-							"objectClass": "Player_2",
-							"sid": 627865583888916,
+							"objectClass": "Player_1",
+							"sid": 320757384693934,
 							"parameters": {
 								"object": "Blood",
 								"layer": "2",
@@ -4121,7 +5917,7 @@
 						{
 							"id": "set-angle",
 							"objectClass": "Blood",
-							"sid": 854618877309048,
+							"sid": 231098715257365,
 							"parameters": {
 								"angle": "random(360)"
 							}
@@ -4129,7 +5925,355 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Blood",
-							"sid": 139337587096821,
+							"sid": 511158504807201,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "400",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 121766699974145,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "400",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 307514214564067,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_1",
+							"sid": 432122550369571,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Blood",
+							"sid": 798799391145251
+						}
+					],
+					"sid": 756115047946580
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 245198706445495,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 411835729414375,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 268145562605539,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 672374182540126,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 697745848496823,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "400",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 112019686926399,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "400",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 819275776437851,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Blood",
+							"sid": 541140921299376
+						}
+					],
+					"sid": 877314556763700
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 978916698024543,
+							"parameters": {
+								"interval-seconds": "0.75"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 280611183890513,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "500"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 193729407320657,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 872346873632321,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 218157079937002,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 248295172521604,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "800",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 808463510963249,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "800",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 827431462087453,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_1",
+							"sid": 461038113938827,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "2"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "Blood",
+							"sid": 965748077922354,
+							"parameters": {
+								"where": "in-front",
+								"object": "Player_1"
+							}
+						}
+					],
+					"sid": 829853892380372
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 357458037448751,
+							"parameters": {
+								"interval-seconds": "0.5"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 215303679559030,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "250"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 833423908051472,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 875645495892370,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 342316932376658,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 819128154250652,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -4146,7 +6290,7 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Blood",
-							"sid": 450193863034488,
+							"sid": 105818088887863,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -4161,9 +6305,264 @@
 							}
 						},
 						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_1",
+							"sid": 658946305919907,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "5"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "Blood",
+							"sid": 355599735265672,
+							"parameters": {
+								"where": "in-front",
+								"object": "Player_1"
+							}
+						}
+					],
+					"sid": 859306241116233
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 434892004909524,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_1",
+							"sid": 401641938712284,
+							"parameters": {
+								"instance-variable": "FinishedCorpseExplosion"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 645305660027907,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 219974686473874,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 264673286188621,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 850828862837186,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_1",
+							"sid": 473496690837890,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 869759294974431,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
 							"id": "tween-one-property",
 							"objectClass": "Blood",
-							"sid": 642866929091313,
+							"sid": 381466814814282,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "2000",
+								"time": "5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 240293380530992,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "2000",
+								"time": "5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Player_1",
+							"sid": 611737758184042,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_1",
+							"sid": 594372840016639,
+							"parameters": {
+								"instance-variable": "FinishedCorpseExplosion",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 885700676141618
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 820770459178531,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player_1",
+							"sid": 983927225874975,
+							"parameters": {
+								"animation": "\"Dead\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 305323308568392
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_2",
+							"sid": 797711209483545,
+							"parameters": {
+								"object": "Coral"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 208274261513793,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 517410720653029,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 668379389552264,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 134242492118391,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "1000",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 444312674224234,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -4176,9 +6575,18 @@
 								"ping-pong": "no",
 								"repeat-count": "1"
 							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_2",
+							"sid": 438765818041706,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "100 + ((abs(Player_2.Platform.VectorX) + abs(Player_2.Platform.VectorY)))"
+							}
 						}
 					],
-					"sid": 127443611223926
+					"sid": 629840933413894
 				},
 				{
 					"eventType": "block",
@@ -4186,24 +6594,629 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 709362603237464,
+							"sid": 841224821957947,
 							"parameters": {
-								"interval-seconds": "0.1"
+								"interval-seconds": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 315269485460086,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "750"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 416486517131967,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position",
-							"objectClass": "Blood",
-							"sid": 987314056906785,
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 125616090219229,
 							"parameters": {
-								"x": "Blood.X + cos(Blood.Angle)",
-								"y": "Blood.Y + sin(Blood.Angle)"
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 496571590854560,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 764357873574603,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "400",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 445061239880384,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "400",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 627123536880786,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_2",
+							"sid": 200201081466699,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Blood",
+							"sid": 359299961528190
+						}
+					],
+					"sid": 247620352314148
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 500506415114302,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 993331141442342,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "0"
 							}
 						}
 					],
-					"sid": 228007000098781
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 180624638903096,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 771498249174517,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 287999746995615,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "400",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 301724358531451,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "400",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 449780302006151,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Blood",
+							"sid": 545984011521308
+						}
+					],
+					"sid": 521905725489732
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 400920142476075,
+							"parameters": {
+								"interval-seconds": "0.75"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 586745684015489,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "500"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 902573829685709,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 691803063813781,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 579680103128509,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 559256432554113,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "800",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 671123120628653,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "800",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 818048563685628,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_2",
+							"sid": 458575562472708,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "2"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "Blood",
+							"sid": 509113265949182,
+							"parameters": {
+								"where": "in-front",
+								"object": "Player_2"
+							}
+						}
+					],
+					"sid": 919541212205120
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 790300909178552,
+							"parameters": {
+								"interval-seconds": "0.5"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 187425113518044,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "250"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 296379369395148,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 346764041928798,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 116457743068259,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 956675494333145,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "1000",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 600995405112544,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "1000",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_2",
+							"sid": 306880893604148,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "5"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "Blood",
+							"sid": 852498774348243,
+							"parameters": {
+								"where": "in-front",
+								"object": "Player_2"
+							}
+						}
+					],
+					"sid": 820582106618096
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 195692054761979,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_2",
+							"sid": 310022491562002,
+							"parameters": {
+								"instance-variable": "FinishedCorpseExplosion"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 163647433172369,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 126721347386058,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 640772393359463,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 959150377588154,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_2",
+							"sid": 582814620848166,
+							"parameters": {
+								"object": "Blood",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Blood",
+							"sid": 772502527948160,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 593283779530824,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "2000",
+								"time": "5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Blood",
+							"sid": 300960662145221,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "2000",
+								"time": "5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Player_2",
+							"sid": 771465496287572,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_2",
+							"sid": 466707119650862,
+							"parameters": {
+								"instance-variable": "FinishedCorpseExplosion",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 226114876438379
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 988126192509317,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 2,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player_2",
+							"sid": 337681031042105,
+							"parameters": {
+								"animation": "\"Dead\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 828809367605542
 				}
 			],
 			"sid": 745499023155064

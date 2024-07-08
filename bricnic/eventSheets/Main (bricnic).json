@@ -324,6 +324,15 @@
 								"x": "Player_1.X - 1120 + (ViewportWidth(\"Canvas\") / 2)",
 								"y": "Player_1.Y - 540"
 							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_1_text2",
+							"sid": 426313863965754,
+							"parameters": {
+								"x": "Player_1.X - 1120 + (ViewportWidth(\"Canvas\") / 2)",
+								"y": "Player_1.Y - 490"
+							}
 						}
 					],
 					"sid": 971633496902458
@@ -411,6 +420,15 @@
 							}
 						},
 						{
+							"id": "paste-object",
+							"objectClass": "DrawingCanvas",
+							"sid": 108604067201461,
+							"parameters": {
+								"object": "Player_1_text2",
+								"effects": "with-effects"
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "ForegroundWalls",
 							"sid": 934677408438066,
@@ -493,11 +511,21 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "Player_2_debug",
-							"sid": 229361725404543,
+							"objectClass": "Player_2_text2",
+							"sid": 970730470182304,
 							"parameters": {
 								"x": "Player_2.X - 350",
-								"y": "Player_2.Y - 440"
+								"y": "Player_2.Y - 490"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_2_debug",
+							"sid": 606113365533912,
+							"disabled": true,
+							"parameters": {
+								"x": "Player_2.X - 350",
+								"y": "Player_2.Y - 340"
 							}
 						},
 						{
@@ -4486,6 +4514,32 @@
 						}
 					],
 					"sid": 766389654111109
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_1",
+							"sid": 195121773872022,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Player_1_text2",
+							"sid": 719072975243634,
+							"parameters": {
+								"text": "\"Not carrying anything\""
+							}
+						}
+					],
+					"sid": 448256945073911
 				}
 			],
 			"sid": 107421894307549
@@ -4545,6 +4599,14 @@
 							"parameters": {
 								"text": "\"MPH: \" & round(Player_2_Boat.Platform.Speed / 20)"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text2",
+							"sid": 133174066969017,
+							"parameters": {
+								"text": "\"Not carrying anything\""
+							}
 						}
 					],
 					"sid": 415308847179809
@@ -4582,6 +4644,32 @@
 						}
 					],
 					"sid": 238149110428558
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_2",
+							"sid": 165889574068000,
+							"parameters": {
+								"instance-variable": "CarryWeight",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text2",
+							"sid": 110625475282117,
+							"parameters": {
+								"text": "\"Not carrying anything\""
+							}
+						}
+					],
+					"sid": 129740103630849
 				}
 			],
 			"sid": 412521068612227
@@ -4648,9 +4736,45 @@
 								"instance-variable": "GemCount",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_1_text2",
+							"sid": 342059558979975,
+							"parameters": {
+								"text": "\"Carrying: \" & Player_1.GemCount & \" gem\""
+							}
 						}
 					],
-					"sid": 948556678561191
+					"sid": 948556678561191,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_1",
+									"sid": 594705445305007,
+									"parameters": {
+										"instance-variable": "GemCount",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "append-text",
+									"objectClass": "Player_1_text2",
+									"sid": 436983042443712,
+									"parameters": {
+										"text": "\"s\""
+									}
+								}
+							],
+							"sid": 433775636957902
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -4707,6 +4831,14 @@
 								"instance-variable": "TreasureChestCount",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_1_text2",
+							"sid": 641604054509895,
+							"parameters": {
+								"text": "\"Carrying: Treasure chest\""
+							}
 						}
 					],
 					"sid": 391827774883645
@@ -4717,7 +4849,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 541553066947226,
+							"sid": 828698151650144,
 							"parameters": {
 								"instance-variable": "UseHeld",
 								"comparison": 5,
@@ -4727,7 +4859,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_2",
-							"sid": 996528173042986,
+							"sid": 814202250226369,
 							"parameters": {
 								"object": "Gem"
 							}
@@ -4735,7 +4867,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_2",
-							"sid": 185307269356368,
+							"sid": 566177209316575,
 							"parameters": {
 								"instance-variable": "CarryWeight",
 								"comparison": 3,
@@ -4747,12 +4879,12 @@
 						{
 							"id": "destroy",
 							"objectClass": "Gem",
-							"sid": 116756561589243
+							"sid": 997052500352336
 						},
 						{
 							"id": "add-to-instvar",
 							"objectClass": "Player_2",
-							"sid": 734780688459850,
+							"sid": 790025393752282,
 							"parameters": {
 								"instance-variable": "CarryWeight",
 								"value": "GemWeight"
@@ -4761,14 +4893,50 @@
 						{
 							"id": "add-to-instvar",
 							"objectClass": "Player_2",
-							"sid": 813973745571370,
+							"sid": 427552543718734,
 							"parameters": {
 								"instance-variable": "GemCount",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text2",
+							"sid": 854561853173916,
+							"parameters": {
+								"text": "\"Carrying: \" & Player_2.GemCount & \" gem\""
+							}
 						}
 					],
-					"sid": 439917422468141
+					"sid": 570687389562336,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_2",
+									"sid": 509119042329130,
+									"parameters": {
+										"instance-variable": "GemCount",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "append-text",
+									"objectClass": "Player_2_text2",
+									"sid": 605655486770074,
+									"parameters": {
+										"text": "\"s\""
+									}
+								}
+							],
+							"sid": 209183195185873
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -4824,6 +4992,14 @@
 							"parameters": {
 								"instance-variable": "TreasureChestCount",
 								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Player_2_text2",
+							"sid": 293932667751570,
+							"parameters": {
+								"text": "\"Carrying: Treasure chest\""
 							}
 						}
 					],

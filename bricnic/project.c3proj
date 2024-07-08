@@ -122,7 +122,9 @@
 			"BlockingGround2",
 			"Coral",
 			"Blood",
-			"Rock"
+			"Rock",
+			"Player_1_text2",
+			"Player_2_text2"
 		],
 		"subfolders": []
 	},
