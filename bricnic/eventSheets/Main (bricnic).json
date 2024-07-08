@@ -3513,7 +3513,7 @@
 							"objectClass": "Player_1",
 							"sid": 448951774854274,
 							"parameters": {
-								"object": "rock_mask"
+								"object": "Barricade_destroy_zone"
 							}
 						},
 						{
@@ -3557,7 +3557,7 @@
 							"objectClass": "Player_1",
 							"sid": 473442449697423,
 							"parameters": {
-								"object": "rock_mask"
+								"object": "Barricade_destroy_zone"
 							}
 						},
 						{
@@ -3611,7 +3611,7 @@
 							"objectClass": "Player_1",
 							"sid": 348134624433480,
 							"parameters": {
-								"object": "rock_mask"
+								"object": "Barricade_destroy_zone"
 							},
 							"isInverted": true
 						},
@@ -3645,7 +3645,7 @@
 							"objectClass": "Player_2",
 							"sid": 987782546162434,
 							"parameters": {
-								"object": "rock_mask"
+								"object": "Barricade_destroy_zone"
 							}
 						},
 						{
@@ -3689,7 +3689,7 @@
 							"objectClass": "Player_2",
 							"sid": 316252628949073,
 							"parameters": {
-								"object": "rock_mask"
+								"object": "Barricade_destroy_zone"
 							}
 						},
 						{
@@ -3743,7 +3743,7 @@
 							"objectClass": "Player_2",
 							"sid": 686295645746560,
 							"parameters": {
-								"object": "rock_mask"
+								"object": "Barricade_destroy_zone"
 							},
 							"isInverted": true
 						},
@@ -3944,7 +3944,7 @@
 					"conditions": [
 						{
 							"id": "is-overlapping-another-object",
-							"objectClass": "rock_mask",
+							"objectClass": "Barricade_destroy_zone",
 							"sid": 708562532712247,
 							"parameters": {
 								"object": "Barricade"
@@ -3955,7 +3955,7 @@
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "rock_mask",
+							"objectClass": "Barricade_destroy_zone",
 							"sid": 871794585444171
 						}
 					],
@@ -4092,6 +4092,31 @@
 						}
 					],
 					"sid": 663160737389621
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 709362603237464,
+							"parameters": {
+								"interval-seconds": "0.1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Blood",
+							"sid": 987314056906785,
+							"parameters": {
+								"x": "Blood.X + cos(Blood.Angle)",
+								"y": "Blood.Y + sin(Blood.Angle)"
+							}
+						}
+					],
+					"sid": 228007000098781
 				}
 			],
 			"sid": 745499023155064
